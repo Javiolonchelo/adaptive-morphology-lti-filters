@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PFG: Archivo de código fuente src/Parameters.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">PFG
+   </div>
+   <div id="projectbrief">Morfología adaptativa</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Parameters_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Parameters.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Parameters_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PARAMETERS_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PARAMETERS_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="Parameters_8h.html#a525335710b53cb064ca56b936120431e">    4</a></span><span class="preprocessor">#define _USE_MATH_DEFINES</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;json/json.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;omp.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceParams.html">   19</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceParams.html">Params</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedce">   27</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedce">SignalType</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a">   28</a></span>  <a class="code hl_enumvalue" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a">IMPULSE</a>,     </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_enumvalue" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedcea5e2eb471621ac5e0288a9a432491dabd">WHITE_NOISE</a>  </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedcea5e2eb471621ac5e0288a9a432491dabd">   30</a></span>};</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespaceParams.html#aa7acf99c30afbc9f896149f028ad083e">   32</a></span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedce">SignalType</a>   <a class="code hl_variable" href="namespaceParams.html#aa7acf99c30afbc9f896149f028ad083e">inputSignal_TYPE</a>      = <a class="code hl_enumvalue" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a">SignalType::IMPULSE</a>;  </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespaceParams.html#a50298ced78a3bd8ccdd5f42fe930445f">   33</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceParams.html#a50298ced78a3bd8ccdd5f42fe930445f">SURVIVORS</a>             = 450;    </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespaceParams.html#adde41d146857cf933d73f0ade06036fb">   34</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceParams.html#adde41d146857cf933d73f0ade06036fb">N</a>                     = 30;     </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespaceParams.html#a04785090759b34ac9462949e04fa0fdd">   35</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceParams.html#a04785090759b34ac9462949e04fa0fdd">POPULATION_SIZE</a>       = 1000;   </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="namespaceParams.html#abb54b174f99877786b1b5152c8c59432">   36</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceParams.html#abb54b174f99877786b1b5152c8c59432">MAX_DELAY</a>             = 50;     </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespaceParams.html#a4db65a5ed08e25bd8c2400ef3a44596f">   37</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceParams.html#a4db65a5ed08e25bd8c2400ef3a44596f">NUM_THREADS</a>           = 8;      </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespaceParams.html#a5bf9b308e8a45f6b1f0f51f59b499a3c">   38</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceParams.html#a5bf9b308e8a45f6b1f0f51f59b499a3c">MAX_DEPENDENCIES</a>      = <a class="code hl_variable" href="namespaceParams.html#adde41d146857cf933d73f0ade06036fb">N</a>;      </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespaceParams.html#ac9775a0487472d2dcd51bb6441c57057">   39</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceParams.html#ac9775a0487472d2dcd51bb6441c57057">MAX_GENES_CHANGED</a>     = 5;      </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespaceParams.html#a43fc697a445946dc070a510b5d819541">   40</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceParams.html#a43fc697a445946dc070a510b5d819541">MAX_GENERATIONS</a>       = 10000;  </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="namespaceParams.html#aa10a2b7a63bae9cd80ba6eaa6d0772b7">   41</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span>        <a class="code hl_variable" href="namespaceParams.html#aa10a2b7a63bae9cd80ba6eaa6d0772b7">CROSSOVER_RATE</a>        = 0.4;    </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespaceParams.html#a22f342e5377d8214dbed166421ae0257">   42</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span>        <a class="code hl_variable" href="namespaceParams.html#a22f342e5377d8214dbed166421ae0257">MUTATION_RATE</a>         = 0.4;    </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespaceParams.html#aaa4989ccec6610aae9e400b6729780e8">   43</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span>        <a class="code hl_variable" href="namespaceParams.html#aaa4989ccec6610aae9e400b6729780e8">PENALTY_NUM_GAINS</a>     = 1e-6;   </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespaceParams.html#a6fe941bce457463a8c8a903ff6facf16">   44</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span>        <a class="code hl_variable" href="namespaceParams.html#a6fe941bce457463a8c8a903ff6facf16">PENALTY_NUM_ADDITIONS</a> = 1e-6;   </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="namespaceParams.html#aa3bae3068a397bd3e87c4bce4fcab198">   45</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span>        <a class="code hl_variable" href="namespaceParams.html#aa3bae3068a397bd3e87c4bce4fcab198">PENALTY_MEMORY</a>        = 1e-6;   </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespaceParams.html#a2834d8ce3e722e8efd4e8ca20696c364">   46</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span>        <a class="code hl_variable" href="namespaceParams.html#a2834d8ce3e722e8efd4e8ca20696c364">PENALTY_MSE</a>           = 1e2;    </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespaceParams.html#ac9d1f5c1aa22082a4e6131546949ec15">   47</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span>        <a class="code hl_variable" href="namespaceParams.html#ac9d1f5c1aa22082a4e6131546949ec15">EXIT_THRESHOLD</a>        = 0.999;  </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespaceParams.html#ae17249460a1f340f94077f9bd41cf398">   48</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span>         <a class="code hl_variable" href="namespaceParams.html#ae17249460a1f340f94077f9bd41cf398">PRINT_MATRIX</a> = <span class="keyword">true</span>;  </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="namespaceParams.html#a9406f498f2fb9a0804136b67dc4131cf">   49</a></span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span>         <a class="code hl_variable" href="namespaceParams.html#a9406f498f2fb9a0804136b67dc4131cf">SAVE_RESULTS</a> = <span class="keyword">true</span>;  </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}  <span class="comment">// namespace Params</span></div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespaceHelpers.html">   52</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceHelpers.html">Helpers</a> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">/*******************************************************</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"> * COMANDOS DE UTILIDAD PARA EL ASPECTO DE LA TERMINAL *</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> *******************************************************/</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="Parameters_8h.html#a788be1e5263200d55dddebd3606ccad4">   57</a></span><span class="preprocessor">#define CLEAR_SCREEN      &quot;\033[1;1H&quot;</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="Parameters_8h.html#a0bc26f84308643c9925657e9bd4f21a9">   58</a></span><span class="preprocessor">#define CLEAR_SCREEN_FR   &quot;\033[H\033[J&quot;</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="Parameters_8h.html#a22b9d6a5652b0db56f72c4326e2d1f41">   59</a></span><span class="preprocessor">#define MOVE_TO_COLUMN(x) &quot;\033[&quot; #x &quot;G&quot;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="Parameters_8h.html#ab0ed582bd1d1f9ecdc30a2bf711df24a">   60</a></span><span class="preprocessor">#define ERASE_LINE        &quot;\033[A\033[K&quot;</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="Parameters_8h.html#a241aeeb764887ae5e3de58b98f04b16d">   61</a></span><span class="preprocessor">#define WIDTH             6</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceHelpers.html#a379533948ff739329c4d4731aeaf73dd">createSignal</a>(std::vector&lt;double&gt;&amp; result, <a class="code hl_enumeration" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedce">Params::SignalType</a> signal_type, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> L);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceHelpers.html#aac1b4790b58de2b884dc8cc3024ca435">filterUsingDifferenceEquation</a>(std::vector&lt;double&gt;&amp;      in,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                                   std::vector&lt;double&gt;&amp;      out,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                   <span class="keyword">const</span> std::vector&lt;double&gt; b,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                                   <span class="keyword">const</span> std::vector&lt;double&gt; a,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                                   <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        L);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keywordtype">double</span> <a class="code hl_function" href="namespaceHelpers.html#abc79d0984e865f907b1a049842c7681a">randomDouble</a>(<span class="keywordtype">double</span> min = 0, <span class="keywordtype">double</span> max = 1);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">double</span> <a class="code hl_function" href="namespaceHelpers.html#a675baac9be98003c5a89bfff7adb12c4">randomDoubleNormal</a>(<span class="keywordtype">double</span> mean = 0, <span class="keywordtype">double</span> stddev = 0.01);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keywordtype">int</span> <a class="code hl_function" href="namespaceHelpers.html#ac18da6249ccf9685030c0532a332c3ff">randomInt</a>(<span class="keywordtype">int</span> min = 0, <span class="keywordtype">int</span> max = INT_MAX);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="namespaceHelpers.html#a177af695531d398b06458eb9a4243800">  135</a></span><span class="keyword">static</span> std::random_device <a class="code hl_variable" href="namespaceHelpers.html#a177af695531d398b06458eb9a4243800">rd</a>;  </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="namespaceHelpers.html#a4130f0e39e22d3ba14599307bde66467">  136</a></span><span class="keyword">static</span> std::mt19937       <a class="code hl_function" href="namespaceHelpers.html#a4130f0e39e22d3ba14599307bde66467">gen</a>(</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_variable" href="namespaceHelpers.html#a177af695531d398b06458eb9a4243800">rd</a>());  </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}  <span class="comment">// namespace Helpers</span></div>
+</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespaceHelpers_html"><div class="ttname"><a href="namespaceHelpers.html">Helpers</a></div><div class="ttdef"><b>Definition</b> Parameters.h:52</div></div>
+<div class="ttc" id="anamespaceHelpers_html_a177af695531d398b06458eb9a4243800"><div class="ttname"><a href="namespaceHelpers.html#a177af695531d398b06458eb9a4243800">Helpers::rd</a></div><div class="ttdeci">static std::random_device rd</div><div class="ttdoc">Generador de números aleatorios de la librería estándar.</div><div class="ttdef"><b>Definition</b> Parameters.h:135</div></div>
+<div class="ttc" id="anamespaceHelpers_html_a379533948ff739329c4d4731aeaf73dd"><div class="ttname"><a href="namespaceHelpers.html#a379533948ff739329c4d4731aeaf73dd">Helpers::createSignal</a></div><div class="ttdeci">void createSignal(std::vector&lt; double &gt; &amp;result, Params::SignalType signal_type, const unsigned int L)</div><div class="ttdoc">Crea una señal de entrada en función del tipo escogido.</div><div class="ttdef"><b>Definition</b> Parameters.cpp:3</div></div>
+<div class="ttc" id="anamespaceHelpers_html_a4130f0e39e22d3ba14599307bde66467"><div class="ttname"><a href="namespaceHelpers.html#a4130f0e39e22d3ba14599307bde66467">Helpers::gen</a></div><div class="ttdeci">static std::mt19937 gen(rd())</div><div class="ttdoc">Instancia del generador Mersenne-Twister.</div></div>
+<div class="ttc" id="anamespaceHelpers_html_a675baac9be98003c5a89bfff7adb12c4"><div class="ttname"><a href="namespaceHelpers.html#a675baac9be98003c5a89bfff7adb12c4">Helpers::randomDoubleNormal</a></div><div class="ttdeci">double randomDoubleNormal(double mean=0, double stddev=0.01)</div><div class="ttdoc">Genera un número aleatorio de tipo double con una distribución normal.</div><div class="ttdef"><b>Definition</b> Parameters.cpp:50</div></div>
+<div class="ttc" id="anamespaceHelpers_html_aac1b4790b58de2b884dc8cc3024ca435"><div class="ttname"><a href="namespaceHelpers.html#aac1b4790b58de2b884dc8cc3024ca435">Helpers::filterUsingDifferenceEquation</a></div><div class="ttdeci">void filterUsingDifferenceEquation(std::vector&lt; double &gt; &amp;in, std::vector&lt; double &gt; &amp;out, const std::vector&lt; double &gt; b, const std::vector&lt; double &gt; a, const unsigned int L)</div><div class="ttdoc">Filtra una señal mediante una ecuación en diferencias.</div><div class="ttdef"><b>Definition</b> Parameters.cpp:18</div></div>
+<div class="ttc" id="anamespaceHelpers_html_abc79d0984e865f907b1a049842c7681a"><div class="ttname"><a href="namespaceHelpers.html#abc79d0984e865f907b1a049842c7681a">Helpers::randomDouble</a></div><div class="ttdeci">double randomDouble(double min=0, double max=1)</div><div class="ttdoc">Genera un número aleatorio de tipo double entre min y max.</div><div class="ttdef"><b>Definition</b> Parameters.cpp:45</div></div>
+<div class="ttc" id="anamespaceHelpers_html_ac18da6249ccf9685030c0532a332c3ff"><div class="ttname"><a href="namespaceHelpers.html#ac18da6249ccf9685030c0532a332c3ff">Helpers::randomInt</a></div><div class="ttdeci">int randomInt(int min=0, int max=INT_MAX)</div><div class="ttdoc">Genera un número aleatorio entero entre min y max (incluidos).</div><div class="ttdef"><b>Definition</b> Parameters.cpp:55</div></div>
+<div class="ttc" id="anamespaceParams_html"><div class="ttname"><a href="namespaceParams.html">Params</a></div><div class="ttdef"><b>Definition</b> Parameters.h:19</div></div>
+<div class="ttc" id="anamespaceParams_html_a04785090759b34ac9462949e04fa0fdd"><div class="ttname"><a href="namespaceParams.html#a04785090759b34ac9462949e04fa0fdd">Params::POPULATION_SIZE</a></div><div class="ttdeci">static const unsigned int POPULATION_SIZE</div><div class="ttdoc">Tamaño de la población.</div><div class="ttdef"><b>Definition</b> Parameters.h:35</div></div>
+<div class="ttc" id="anamespaceParams_html_a22f342e5377d8214dbed166421ae0257"><div class="ttname"><a href="namespaceParams.html#a22f342e5377d8214dbed166421ae0257">Params::MUTATION_RATE</a></div><div class="ttdeci">static const float MUTATION_RATE</div><div class="ttdoc">Probabilidad de mutación.</div><div class="ttdef"><b>Definition</b> Parameters.h:42</div></div>
+<div class="ttc" id="anamespaceParams_html_a2834d8ce3e722e8efd4e8ca20696c364"><div class="ttname"><a href="namespaceParams.html#a2834d8ce3e722e8efd4e8ca20696c364">Params::PENALTY_MSE</a></div><div class="ttdeci">static const float PENALTY_MSE</div><div class="ttdoc">Penalización por error cuadrático medio (MSE).</div><div class="ttdef"><b>Definition</b> Parameters.h:46</div></div>
+<div class="ttc" id="anamespaceParams_html_a43fc697a445946dc070a510b5d819541"><div class="ttname"><a href="namespaceParams.html#a43fc697a445946dc070a510b5d819541">Params::MAX_GENERATIONS</a></div><div class="ttdeci">static const unsigned int MAX_GENERATIONS</div><div class="ttdoc">Número máximo de generaciones a ejecutar.</div><div class="ttdef"><b>Definition</b> Parameters.h:40</div></div>
+<div class="ttc" id="anamespaceParams_html_a4db65a5ed08e25bd8c2400ef3a44596f"><div class="ttname"><a href="namespaceParams.html#a4db65a5ed08e25bd8c2400ef3a44596f">Params::NUM_THREADS</a></div><div class="ttdeci">static const unsigned int NUM_THREADS</div><div class="ttdoc">Número de hilos a usar en la ejecución.</div><div class="ttdef"><b>Definition</b> Parameters.h:37</div></div>
+<div class="ttc" id="anamespaceParams_html_a50298ced78a3bd8ccdd5f42fe930445f"><div class="ttname"><a href="namespaceParams.html#a50298ced78a3bd8ccdd5f42fe930445f">Params::SURVIVORS</a></div><div class="ttdeci">static const unsigned int SURVIVORS</div><div class="ttdoc">Número de individuos supervivientes de la población.</div><div class="ttdef"><b>Definition</b> Parameters.h:33</div></div>
+<div class="ttc" id="anamespaceParams_html_a5bf9b308e8a45f6b1f0f51f59b499a3c"><div class="ttname"><a href="namespaceParams.html#a5bf9b308e8a45f6b1f0f51f59b499a3c">Params::MAX_DEPENDENCIES</a></div><div class="ttdeci">static const unsigned int MAX_DEPENDENCIES</div><div class="ttdoc">Máximo número de dependencias permitidas por nodo.</div><div class="ttdef"><b>Definition</b> Parameters.h:38</div></div>
+<div class="ttc" id="anamespaceParams_html_a6fe941bce457463a8c8a903ff6facf16"><div class="ttname"><a href="namespaceParams.html#a6fe941bce457463a8c8a903ff6facf16">Params::PENALTY_NUM_ADDITIONS</a></div><div class="ttdeci">static const float PENALTY_NUM_ADDITIONS</div><div class="ttdoc">Penalización por número de sumas.</div><div class="ttdef"><b>Definition</b> Parameters.h:44</div></div>
+<div class="ttc" id="anamespaceParams_html_a9406f498f2fb9a0804136b67dc4131cf"><div class="ttname"><a href="namespaceParams.html#a9406f498f2fb9a0804136b67dc4131cf">Params::SAVE_RESULTS</a></div><div class="ttdeci">static const bool SAVE_RESULTS</div><div class="ttdoc">Si es true, guarda los resultados en un archivo JSON.</div><div class="ttdef"><b>Definition</b> Parameters.h:49</div></div>
+<div class="ttc" id="anamespaceParams_html_a99ab6e71398f33c7f621874ced1bedce"><div class="ttname"><a href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedce">Params::SignalType</a></div><div class="ttdeci">SignalType</div><div class="ttdoc">Los diferentes tipos disponibles para la señal de entrada.</div><div class="ttdef"><b>Definition</b> Parameters.h:27</div></div>
+<div class="ttc" id="anamespaceParams_html_a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a"><div class="ttname"><a href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a">Params::IMPULSE</a></div><div class="ttdeci">@ IMPULSE</div><div class="ttdoc">Impulso unitario. La primera muestra vale 1.0 y el resto 0.0.</div><div class="ttdef"><b>Definition</b> Parameters.h:28</div></div>
+<div class="ttc" id="anamespaceParams_html_a99ab6e71398f33c7f621874ced1bedcea5e2eb471621ac5e0288a9a432491dabd"><div class="ttname"><a href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedcea5e2eb471621ac5e0288a9a432491dabd">Params::WHITE_NOISE</a></div><div class="ttdeci">@ WHITE_NOISE</div><div class="ttdoc">Ruido blanco. Cada muestra es un número aleatorio, usa randomDouble().</div><div class="ttdef"><b>Definition</b> Parameters.h:29</div></div>
+<div class="ttc" id="anamespaceParams_html_aa10a2b7a63bae9cd80ba6eaa6d0772b7"><div class="ttname"><a href="namespaceParams.html#aa10a2b7a63bae9cd80ba6eaa6d0772b7">Params::CROSSOVER_RATE</a></div><div class="ttdeci">static const float CROSSOVER_RATE</div><div class="ttdoc">Probabilidad de cruce.</div><div class="ttdef"><b>Definition</b> Parameters.h:41</div></div>
+<div class="ttc" id="anamespaceParams_html_aa3bae3068a397bd3e87c4bce4fcab198"><div class="ttname"><a href="namespaceParams.html#aa3bae3068a397bd3e87c4bce4fcab198">Params::PENALTY_MEMORY</a></div><div class="ttdeci">static const float PENALTY_MEMORY</div><div class="ttdoc">Penalización por memoria ocupada.</div><div class="ttdef"><b>Definition</b> Parameters.h:45</div></div>
+<div class="ttc" id="anamespaceParams_html_aa7acf99c30afbc9f896149f028ad083e"><div class="ttname"><a href="namespaceParams.html#aa7acf99c30afbc9f896149f028ad083e">Params::inputSignal_TYPE</a></div><div class="ttdeci">static const SignalType inputSignal_TYPE</div><div class="ttdoc">Tipo de señal de entrada.</div><div class="ttdef"><b>Definition</b> Parameters.h:32</div></div>
+<div class="ttc" id="anamespaceParams_html_aaa4989ccec6610aae9e400b6729780e8"><div class="ttname"><a href="namespaceParams.html#aaa4989ccec6610aae9e400b6729780e8">Params::PENALTY_NUM_GAINS</a></div><div class="ttdeci">static const float PENALTY_NUM_GAINS</div><div class="ttdoc">Penalización por número de ganancias.</div><div class="ttdef"><b>Definition</b> Parameters.h:43</div></div>
+<div class="ttc" id="anamespaceParams_html_abb54b174f99877786b1b5152c8c59432"><div class="ttname"><a href="namespaceParams.html#abb54b174f99877786b1b5152c8c59432">Params::MAX_DELAY</a></div><div class="ttdeci">static const unsigned int MAX_DELAY</div><div class="ttdoc">Valor máximo de retardo permitido.</div><div class="ttdef"><b>Definition</b> Parameters.h:36</div></div>
+<div class="ttc" id="anamespaceParams_html_ac9775a0487472d2dcd51bb6441c57057"><div class="ttname"><a href="namespaceParams.html#ac9775a0487472d2dcd51bb6441c57057">Params::MAX_GENES_CHANGED</a></div><div class="ttdeci">static const unsigned int MAX_GENES_CHANGED</div><div class="ttdoc">Máximo número de genes a cambiar en una mutación.</div><div class="ttdef"><b>Definition</b> Parameters.h:39</div></div>
+<div class="ttc" id="anamespaceParams_html_ac9d1f5c1aa22082a4e6131546949ec15"><div class="ttname"><a href="namespaceParams.html#ac9d1f5c1aa22082a4e6131546949ec15">Params::EXIT_THRESHOLD</a></div><div class="ttdeci">static const float EXIT_THRESHOLD</div><div class="ttdoc">Umbral de salida del algoritmo.</div><div class="ttdef"><b>Definition</b> Parameters.h:47</div></div>
+<div class="ttc" id="anamespaceParams_html_adde41d146857cf933d73f0ade06036fb"><div class="ttname"><a href="namespaceParams.html#adde41d146857cf933d73f0ade06036fb">Params::N</a></div><div class="ttdeci">static const unsigned int N</div><div class="ttdoc">Tamaño de la matriz cuadrada .</div><div class="ttdef"><b>Definition</b> Parameters.h:34</div></div>
+<div class="ttc" id="anamespaceParams_html_ae17249460a1f340f94077f9bd41cf398"><div class="ttname"><a href="namespaceParams.html#ae17249460a1f340f94077f9bd41cf398">Params::PRINT_MATRIX</a></div><div class="ttdeci">static const bool PRINT_MATRIX</div><div class="ttdoc">Si es true, imprime la matriz de conexiones en cada generación.</div><div class="ttdef"><b>Definition</b> Parameters.h:48</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="Parameters_8h.html">Parameters.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

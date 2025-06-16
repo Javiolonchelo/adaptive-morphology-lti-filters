@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PFG: Referencia del archivo src/Parameters.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">PFG
+   </div>
+   <div id="projectbrief">Morfología adaptativa</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Parameters_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Espacios de nombres</a> &#124;
+<a href="#define-members">defines</a> &#124;
+<a href="#enum-members">Enumeraciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo Parameters.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;json/json.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &quot;omp.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependencias incluidas en Parameters.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="Parameters_8h__incl.png" border="0" usemap="#asrc_2Parameters_8h" alt=""/></div>
+<map name="asrc_2Parameters_8h" id="asrc_2Parameters_8h">
+<area shape="rect" title=" " alt="" coords="457,5,587,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,97,104"/>
+<area shape="poly" title=" " alt="" coords="457,30,303,51,111,81,111,76,302,46,456,25"/>
+<area shape="rect" title=" " alt="" coords="121,79,192,104"/>
+<area shape="poly" title=" " alt="" coords="457,33,206,81,205,76,456,28"/>
+<area shape="rect" title=" " alt="" coords="216,79,279,104"/>
+<area shape="poly" title=" " alt="" coords="478,33,293,81,291,76,477,28"/>
+<area shape="rect" title=" " alt="" coords="303,79,370,104"/>
+<area shape="poly" title=" " alt="" coords="493,33,380,76,379,71,491,28"/>
+<area shape="rect" title=" " alt="" coords="394,79,453,104"/>
+<area shape="poly" title=" " alt="" coords="508,33,452,73,449,68,505,29"/>
+<area shape="rect" title=" " alt="" coords="477,79,567,104"/>
+<area shape="poly" title=" " alt="" coords="525,31,525,65,519,65,519,31"/>
+<area shape="rect" title=" " alt="" coords="592,79,665,104"/>
+<area shape="poly" title=" " alt="" coords="541,28,601,69,598,73,538,33"/>
+<area shape="rect" title=" " alt="" coords="690,79,765,104"/>
+<area shape="poly" title=" " alt="" coords="556,28,682,72,680,77,554,33"/>
+<area shape="rect" title=" " alt="" coords="789,79,869,104"/>
+<area shape="poly" title=" " alt="" coords="572,28,776,75,775,80,571,33"/>
+<area shape="rect" title=" " alt="" coords="893,79,965,104"/>
+<area shape="poly" title=" " alt="" coords="588,26,719,47,880,76,879,81,718,52,587,31"/>
+<area shape="rect" title=" " alt="" coords="989,79,1052,104"/>
+<area shape="poly" title=" " alt="" coords="588,23,760,42,976,76,975,81,759,47,587,28"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="Parameters_8h__dep__incl.png" border="0" usemap="#asrc_2Parameters_8hdep" alt=""/></div>
+<map name="asrc_2Parameters_8hdep" id="asrc_2Parameters_8hdep">
+<area shape="rect" title=" " alt="" coords="171,5,301,31"/>
+<area shape="rect" href="Algorithm_8h.html" title=" " alt="" coords="134,152,255,177"/>
+<area shape="poly" title=" " alt="" coords="231,45,201,153,195,151,226,44"/>
+<area shape="rect" href="Filter_8h.html" title=" " alt="" coords="67,79,157,104"/>
+<area shape="poly" title=" " alt="" coords="206,40,134,81,131,76,203,35"/>
+<area shape="rect" href="Menu_8h.html" title=" " alt="" coords="232,79,325,104"/>
+<area shape="poly" title=" " alt="" coords="252,41,274,77,269,80,248,44"/>
+<area shape="rect" href="Parameters_8cpp.html" title=" " alt="" coords="349,79,496,104"/>
+<area shape="poly" title=" " alt="" coords="279,33,393,76,391,81,278,38"/>
+<area shape="rect" href="Algorithm_8cpp.html" title=" " alt="" coords="55,225,191,251"/>
+<area shape="poly" title=" " alt="" coords="175,189,136,227,132,223,171,185"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="215,225,321,251"/>
+<area shape="poly" title=" " alt="" coords="218,185,258,223,254,227,215,189"/>
+<area shape="poly" title=" " alt="" coords="137,111,183,150,179,154,134,115"/>
+<area shape="rect" href="Filter_8cpp.html" title=" " alt="" coords="5,152,109,177"/>
+<area shape="poly" title=" " alt="" coords="97,117,68,154,64,150,93,113"/>
+<area shape="poly" title=" " alt="" coords="256,115,210,154,207,150,253,111"/>
+<area shape="rect" href="Menu_8cpp.html" title=" " alt="" coords="279,152,387,177"/>
+<area shape="poly" title=" " alt="" coords="298,113,327,150,322,154,294,117"/>
+</map>
+</div>
+</div>
+<p><a href="Parameters_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Espacios de nombres</h2></td></tr>
+<tr class="memitem:namespaceHelpers" id="r_namespaceHelpers"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHelpers.html">Helpers</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceParams" id="r_namespaceParams"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html">Params</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a525335710b53cb064ca56b936120431e" id="r_a525335710b53cb064ca56b936120431e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Parameters_8h.html#a525335710b53cb064ca56b936120431e">_USE_MATH_DEFINES</a></td></tr>
+<tr class="separator:a525335710b53cb064ca56b936120431e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a788be1e5263200d55dddebd3606ccad4" id="r_a788be1e5263200d55dddebd3606ccad4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Parameters_8h.html#a788be1e5263200d55dddebd3606ccad4">CLEAR_SCREEN</a>&#160;&#160;&#160;&quot;\033[1;1H&quot;</td></tr>
+<tr class="separator:a788be1e5263200d55dddebd3606ccad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bc26f84308643c9925657e9bd4f21a9" id="r_a0bc26f84308643c9925657e9bd4f21a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Parameters_8h.html#a0bc26f84308643c9925657e9bd4f21a9">CLEAR_SCREEN_FR</a>&#160;&#160;&#160;&quot;\033[H\033[J&quot;</td></tr>
+<tr class="separator:a0bc26f84308643c9925657e9bd4f21a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0ed582bd1d1f9ecdc30a2bf711df24a" id="r_ab0ed582bd1d1f9ecdc30a2bf711df24a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Parameters_8h.html#ab0ed582bd1d1f9ecdc30a2bf711df24a">ERASE_LINE</a>&#160;&#160;&#160;&quot;\033[A\033[K&quot;</td></tr>
+<tr class="separator:ab0ed582bd1d1f9ecdc30a2bf711df24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22b9d6a5652b0db56f72c4326e2d1f41" id="r_a22b9d6a5652b0db56f72c4326e2d1f41"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Parameters_8h.html#a22b9d6a5652b0db56f72c4326e2d1f41">MOVE_TO_COLUMN</a>(x)&#160;&#160;&#160;&quot;\033[&quot; #x &quot;G&quot;</td></tr>
+<tr class="separator:a22b9d6a5652b0db56f72c4326e2d1f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a241aeeb764887ae5e3de58b98f04b16d" id="r_a241aeeb764887ae5e3de58b98f04b16d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Parameters_8h.html#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a241aeeb764887ae5e3de58b98f04b16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a99ab6e71398f33c7f621874ced1bedce" id="r_a99ab6e71398f33c7f621874ced1bedce"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedce">Params::SignalType</a> { <a class="el" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a">Params::IMPULSE</a>
+, <a class="el" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedcea5e2eb471621ac5e0288a9a432491dabd">Params::WHITE_NOISE</a>
+ }</td></tr>
+<tr class="memdesc:a99ab6e71398f33c7f621874ced1bedce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Los diferentes tipos disponibles para la señal de entrada.  <a href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedce">Más...</a><br /></td></tr>
+<tr class="separator:a99ab6e71398f33c7f621874ced1bedce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">DSP</div></td></tr>
+<tr class="memitem:a379533948ff739329c4d4731aeaf73dd" id="r_a379533948ff739329c4d4731aeaf73dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHelpers.html#a379533948ff739329c4d4731aeaf73dd">Helpers::createSignal</a> (std::vector&lt; double &gt; &amp;result, <a class="el" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedce">Params::SignalType</a> signal_type, const unsigned int L)</td></tr>
+<tr class="memdesc:a379533948ff739329c4d4731aeaf73dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una señal de entrada en función del tipo escogido.  <br /></td></tr>
+<tr class="separator:a379533948ff739329c4d4731aeaf73dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac1b4790b58de2b884dc8cc3024ca435" id="r_aac1b4790b58de2b884dc8cc3024ca435"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHelpers.html#aac1b4790b58de2b884dc8cc3024ca435">Helpers::filterUsingDifferenceEquation</a> (std::vector&lt; double &gt; &amp;in, std::vector&lt; double &gt; &amp;out, const std::vector&lt; double &gt; b, const std::vector&lt; double &gt; a, const unsigned int L)</td></tr>
+<tr class="memdesc:aac1b4790b58de2b884dc8cc3024ca435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filtra una señal mediante una ecuación en diferencias.  <br /></td></tr>
+<tr class="separator:aac1b4790b58de2b884dc8cc3024ca435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Generadores de números aleatorios</div></td></tr>
+<tr class="memitem:abc79d0984e865f907b1a049842c7681a" id="r_abc79d0984e865f907b1a049842c7681a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHelpers.html#abc79d0984e865f907b1a049842c7681a">Helpers::randomDouble</a> (double min=0, double max=1)</td></tr>
+<tr class="memdesc:abc79d0984e865f907b1a049842c7681a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un número aleatorio de tipo <code>double</code> entre <code>min</code> y <code>max</code>.  <br /></td></tr>
+<tr class="separator:abc79d0984e865f907b1a049842c7681a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675baac9be98003c5a89bfff7adb12c4" id="r_a675baac9be98003c5a89bfff7adb12c4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHelpers.html#a675baac9be98003c5a89bfff7adb12c4">Helpers::randomDoubleNormal</a> (double mean=0, double stddev=0.01)</td></tr>
+<tr class="memdesc:a675baac9be98003c5a89bfff7adb12c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un número aleatorio de tipo <code>double</code> con una distribución normal.  <br /></td></tr>
+<tr class="separator:a675baac9be98003c5a89bfff7adb12c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac18da6249ccf9685030c0532a332c3ff" id="r_ac18da6249ccf9685030c0532a332c3ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHelpers.html#ac18da6249ccf9685030c0532a332c3ff">Helpers::randomInt</a> (int min=0, int max=INT_MAX)</td></tr>
+<tr class="memdesc:ac18da6249ccf9685030c0532a332c3ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un número aleatorio entero entre <code>min</code> y <code>max</code> (incluidos).  <br /></td></tr>
+<tr class="separator:ac18da6249ccf9685030c0532a332c3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa10a2b7a63bae9cd80ba6eaa6d0772b7" id="r_aa10a2b7a63bae9cd80ba6eaa6d0772b7"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#aa10a2b7a63bae9cd80ba6eaa6d0772b7">Params::CROSSOVER_RATE</a> = 0.4</td></tr>
+<tr class="memdesc:aa10a2b7a63bae9cd80ba6eaa6d0772b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Probabilidad de cruce.  <br /></td></tr>
+<tr class="separator:aa10a2b7a63bae9cd80ba6eaa6d0772b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d1f5c1aa22082a4e6131546949ec15" id="r_ac9d1f5c1aa22082a4e6131546949ec15"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#ac9d1f5c1aa22082a4e6131546949ec15">Params::EXIT_THRESHOLD</a> = 0.999</td></tr>
+<tr class="memdesc:ac9d1f5c1aa22082a4e6131546949ec15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Umbral de salida del algoritmo.  <br /></td></tr>
+<tr class="separator:ac9d1f5c1aa22082a4e6131546949ec15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7acf99c30afbc9f896149f028ad083e" id="r_aa7acf99c30afbc9f896149f028ad083e"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedce">SignalType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#aa7acf99c30afbc9f896149f028ad083e">Params::inputSignal_TYPE</a> = <a class="el" href="namespaceParams.html#a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a">SignalType::IMPULSE</a></td></tr>
+<tr class="memdesc:aa7acf99c30afbc9f896149f028ad083e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de señal de entrada.  <br /></td></tr>
+<tr class="separator:aa7acf99c30afbc9f896149f028ad083e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb54b174f99877786b1b5152c8c59432" id="r_abb54b174f99877786b1b5152c8c59432"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#abb54b174f99877786b1b5152c8c59432">Params::MAX_DELAY</a> = 50</td></tr>
+<tr class="memdesc:abb54b174f99877786b1b5152c8c59432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor máximo de retardo permitido.  <br /></td></tr>
+<tr class="separator:abb54b174f99877786b1b5152c8c59432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bf9b308e8a45f6b1f0f51f59b499a3c" id="r_a5bf9b308e8a45f6b1f0f51f59b499a3c"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#a5bf9b308e8a45f6b1f0f51f59b499a3c">Params::MAX_DEPENDENCIES</a> = <a class="el" href="namespaceParams.html#adde41d146857cf933d73f0ade06036fb">N</a></td></tr>
+<tr class="memdesc:a5bf9b308e8a45f6b1f0f51f59b499a3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Máximo número de dependencias permitidas por nodo.  <br /></td></tr>
+<tr class="separator:a5bf9b308e8a45f6b1f0f51f59b499a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43fc697a445946dc070a510b5d819541" id="r_a43fc697a445946dc070a510b5d819541"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#a43fc697a445946dc070a510b5d819541">Params::MAX_GENERATIONS</a> = 10000</td></tr>
+<tr class="memdesc:a43fc697a445946dc070a510b5d819541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número máximo de generaciones a ejecutar.  <br /></td></tr>
+<tr class="separator:a43fc697a445946dc070a510b5d819541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9775a0487472d2dcd51bb6441c57057" id="r_ac9775a0487472d2dcd51bb6441c57057"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#ac9775a0487472d2dcd51bb6441c57057">Params::MAX_GENES_CHANGED</a> = 5</td></tr>
+<tr class="memdesc:ac9775a0487472d2dcd51bb6441c57057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Máximo número de genes a cambiar en una mutación.  <br /></td></tr>
+<tr class="separator:ac9775a0487472d2dcd51bb6441c57057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f342e5377d8214dbed166421ae0257" id="r_a22f342e5377d8214dbed166421ae0257"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#a22f342e5377d8214dbed166421ae0257">Params::MUTATION_RATE</a> = 0.4</td></tr>
+<tr class="memdesc:a22f342e5377d8214dbed166421ae0257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Probabilidad de mutación.  <br /></td></tr>
+<tr class="separator:a22f342e5377d8214dbed166421ae0257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adde41d146857cf933d73f0ade06036fb" id="r_adde41d146857cf933d73f0ade06036fb"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#adde41d146857cf933d73f0ade06036fb">Params::N</a> = 30</td></tr>
+<tr class="memdesc:adde41d146857cf933d73f0ade06036fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tamaño de la matriz cuadrada \( (N \times N) \).  <br /></td></tr>
+<tr class="separator:adde41d146857cf933d73f0ade06036fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db65a5ed08e25bd8c2400ef3a44596f" id="r_a4db65a5ed08e25bd8c2400ef3a44596f"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#a4db65a5ed08e25bd8c2400ef3a44596f">Params::NUM_THREADS</a> = 8</td></tr>
+<tr class="memdesc:a4db65a5ed08e25bd8c2400ef3a44596f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de hilos a usar en la ejecución.  <br /></td></tr>
+<tr class="separator:a4db65a5ed08e25bd8c2400ef3a44596f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3bae3068a397bd3e87c4bce4fcab198" id="r_aa3bae3068a397bd3e87c4bce4fcab198"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#aa3bae3068a397bd3e87c4bce4fcab198">Params::PENALTY_MEMORY</a> = 1e-6</td></tr>
+<tr class="memdesc:aa3bae3068a397bd3e87c4bce4fcab198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Penalización por memoria ocupada.  <br /></td></tr>
+<tr class="separator:aa3bae3068a397bd3e87c4bce4fcab198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2834d8ce3e722e8efd4e8ca20696c364" id="r_a2834d8ce3e722e8efd4e8ca20696c364"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#a2834d8ce3e722e8efd4e8ca20696c364">Params::PENALTY_MSE</a> = 1e2</td></tr>
+<tr class="memdesc:a2834d8ce3e722e8efd4e8ca20696c364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Penalización por error cuadrático medio (MSE).  <br /></td></tr>
+<tr class="separator:a2834d8ce3e722e8efd4e8ca20696c364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fe941bce457463a8c8a903ff6facf16" id="r_a6fe941bce457463a8c8a903ff6facf16"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#a6fe941bce457463a8c8a903ff6facf16">Params::PENALTY_NUM_ADDITIONS</a> = 1e-6</td></tr>
+<tr class="memdesc:a6fe941bce457463a8c8a903ff6facf16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Penalización por número de sumas.  <br /></td></tr>
+<tr class="separator:a6fe941bce457463a8c8a903ff6facf16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4989ccec6610aae9e400b6729780e8" id="r_aaa4989ccec6610aae9e400b6729780e8"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#aaa4989ccec6610aae9e400b6729780e8">Params::PENALTY_NUM_GAINS</a> = 1e-6</td></tr>
+<tr class="memdesc:aaa4989ccec6610aae9e400b6729780e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Penalización por número de ganancias.  <br /></td></tr>
+<tr class="separator:aaa4989ccec6610aae9e400b6729780e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04785090759b34ac9462949e04fa0fdd" id="r_a04785090759b34ac9462949e04fa0fdd"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#a04785090759b34ac9462949e04fa0fdd">Params::POPULATION_SIZE</a> = 1000</td></tr>
+<tr class="memdesc:a04785090759b34ac9462949e04fa0fdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tamaño de la población.  <br /></td></tr>
+<tr class="separator:a04785090759b34ac9462949e04fa0fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae17249460a1f340f94077f9bd41cf398" id="r_ae17249460a1f340f94077f9bd41cf398"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#ae17249460a1f340f94077f9bd41cf398">Params::PRINT_MATRIX</a> = true</td></tr>
+<tr class="memdesc:ae17249460a1f340f94077f9bd41cf398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si es <code>true</code>, imprime la matriz de conexiones en cada generación.  <br /></td></tr>
+<tr class="separator:ae17249460a1f340f94077f9bd41cf398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9406f498f2fb9a0804136b67dc4131cf" id="r_a9406f498f2fb9a0804136b67dc4131cf"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#a9406f498f2fb9a0804136b67dc4131cf">Params::SAVE_RESULTS</a> = true</td></tr>
+<tr class="memdesc:a9406f498f2fb9a0804136b67dc4131cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si es <code>true</code>, guarda los resultados en un archivo JSON.  <br /></td></tr>
+<tr class="separator:a9406f498f2fb9a0804136b67dc4131cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50298ced78a3bd8ccdd5f42fe930445f" id="r_a50298ced78a3bd8ccdd5f42fe930445f"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceParams.html#a50298ced78a3bd8ccdd5f42fe930445f">Params::SURVIVORS</a> = 450</td></tr>
+<tr class="memdesc:a50298ced78a3bd8ccdd5f42fe930445f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de individuos supervivientes de la población.  <br /></td></tr>
+<tr class="separator:a50298ced78a3bd8ccdd5f42fe930445f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Generador de números aleatorios</h2></td></tr>
+<tr class="memitem:a4130f0e39e22d3ba14599307bde66467" id="r_a4130f0e39e22d3ba14599307bde66467"><td class="memItemLeft" align="right" valign="top">static std::mt19937&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHelpers.html#a4130f0e39e22d3ba14599307bde66467">Helpers::gen</a> (<a class="el" href="namespaceHelpers.html#a177af695531d398b06458eb9a4243800">rd</a>())</td></tr>
+<tr class="memdesc:a4130f0e39e22d3ba14599307bde66467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instancia del generador Mersenne-Twister.  <br /></td></tr>
+<tr class="separator:a4130f0e39e22d3ba14599307bde66467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177af695531d398b06458eb9a4243800" id="r_a177af695531d398b06458eb9a4243800"><td class="memItemLeft" align="right" valign="top">static std::random_device&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHelpers.html#a177af695531d398b06458eb9a4243800">Helpers::rd</a></td></tr>
+<tr class="memdesc:a177af695531d398b06458eb9a4243800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generador de números aleatorios de la librería estándar.  <br /></td></tr>
+<tr class="separator:a177af695531d398b06458eb9a4243800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a525335710b53cb064ca56b936120431e" name="a525335710b53cb064ca56b936120431e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a525335710b53cb064ca56b936120431e">&#9670;&#160;</a></span>_USE_MATH_DEFINES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _USE_MATH_DEFINES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a788be1e5263200d55dddebd3606ccad4" name="a788be1e5263200d55dddebd3606ccad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a788be1e5263200d55dddebd3606ccad4">&#9670;&#160;</a></span>CLEAR_SCREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLEAR_SCREEN&#160;&#160;&#160;&quot;\033[1;1H&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0bc26f84308643c9925657e9bd4f21a9" name="a0bc26f84308643c9925657e9bd4f21a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bc26f84308643c9925657e9bd4f21a9">&#9670;&#160;</a></span>CLEAR_SCREEN_FR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLEAR_SCREEN_FR&#160;&#160;&#160;&quot;\033[H\033[J&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0ed582bd1d1f9ecdc30a2bf711df24a" name="ab0ed582bd1d1f9ecdc30a2bf711df24a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0ed582bd1d1f9ecdc30a2bf711df24a">&#9670;&#160;</a></span>ERASE_LINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERASE_LINE&#160;&#160;&#160;&quot;\033[A\033[K&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22b9d6a5652b0db56f72c4326e2d1f41" name="a22b9d6a5652b0db56f72c4326e2d1f41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22b9d6a5652b0db56f72c4326e2d1f41">&#9670;&#160;</a></span>MOVE_TO_COLUMN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOVE_TO_COLUMN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;&quot;\033[&quot; #x &quot;G&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a241aeeb764887ae5e3de58b98f04b16d" name="a241aeeb764887ae5e3de58b98f04b16d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a241aeeb764887ae5e3de58b98f04b16d">&#9670;&#160;</a></span>WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WIDTH&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="Parameters_8h.html">Parameters.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

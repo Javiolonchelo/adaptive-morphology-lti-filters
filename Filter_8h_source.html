@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PFG: Archivo de código fuente src/Filter.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">PFG
+   </div>
+   <div id="projectbrief">Morfología adaptativa</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Filter_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Filter.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Filter_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FILTER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FILTER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="Filter_8h.html#ac22823bea88de7872e7b01a694d32664">    3</a></span><span class="preprocessor">#define ENABLE_COLOR_OUTPUT</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="Parameters_8h.html">Parameters.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classFilter.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="classFilter.html">Filter</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <a class="code hl_class" href="classFilter.html">Filter</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> L);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <a class="code hl_class" href="classFilter.html">Filter</a>(<span class="keyword">const</span> Json::Value&amp; json);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+  <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFilter.html#a8495cc58e6efa01588f4b421b99a0df1">mutateEdges</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFilter.html#af9575bf8be188a6ba8e1ea9409194520">mutateGains</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFilter.html#a1ffb015835fd093f49112007eaf50ed1">mutateDelays</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFilter.html#a3266931a040082540a81e874cff3e5ec">mutateReciprocal</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFilter.html#a1255f04fae481ceccda72bd9f8eb6818">mutateMerge</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> type);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFilter.html#abf81b8d76604a45308154ea4ecafbbb1">mutateConsecutiveEdges</a>();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFilter.html#abf23f4037d90aa0df6d2d7a2f1ad3ea7">mutateMergeUsingLonelyNodeAsSink</a>();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFilter.html#aab2c848d8ae2e9ed6ef863ad793d147f">mutateMergeUsingLonelyNodeAsSource</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFilter.html#af617370c6d60e3e415ae7359342f74ef">crossover</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFilter.html">Filter</a>&amp; parent_1, <span class="keyword">const</span> <a class="code hl_class" href="classFilter.html">Filter</a>&amp; parent_2);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+  <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFilter.html#a08cbe050517f0536e36befc24e776627">computeFitness</a>(std::vector&lt;double&gt;&amp; input, std::vector&lt;double&gt;&amp; target);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  std::string <a class="code hl_function" href="classFilter.html#a8edb6018176017e4169feb57ec2fc12d">exportCode</a>();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  std::string <a class="code hl_function" href="classFilter.html#a374f181f2638c91e92dd583fd6018a85">toString</a>();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classFilter.html#af4f0f071499be1cf39ae3229d327e831">getFitness</a>();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  Json::Value <a class="code hl_function" href="classFilter.html#a0f7e5c8a6fc022c0cc0c223da9316f08">getJson</a>();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+  <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classFilter.html#a9ada957b76c8ad1e63d15f4e57b608c5">  183</a></span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classFilter.html#a9ada957b76c8ad1e63d15f4e57b608c5">type_layer</a>[<a class="code hl_variable" href="namespaceParams.html#adde41d146857cf933d73f0ade06036fb">Params::N</a>][<a class="code hl_variable" href="namespaceParams.html#adde41d146857cf933d73f0ade06036fb">Params::N</a>];</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classFilter.html#adcd2d23039c5d957d629551a177d4ba1">  184</a></span>  <span class="keywordtype">double</span>       <a class="code hl_variable" href="classFilter.html#adcd2d23039c5d957d629551a177d4ba1">value_layer</a>[<a class="code hl_variable" href="namespaceParams.html#adde41d146857cf933d73f0ade06036fb">Params::N</a>][<a class="code hl_variable" href="namespaceParams.html#adde41d146857cf933d73f0ade06036fb">Params::N</a>];</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keywordtype">double</span>       fitness;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> L;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <span class="keywordtype">double</span>       previousError;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  std::vector&lt;std::vector&lt;double&gt;&gt;                   state;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  std::vector&lt;double&gt;                                output;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  std::vector&lt;std::pair&lt;unsigned int, unsigned int&gt;&gt; edges;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  std::vector&lt;std::pair&lt;unsigned int, unsigned int&gt;&gt; gains;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  std::vector&lt;std::pair&lt;unsigned int, unsigned int&gt;&gt; delays;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  std::vector&lt;std::vector&lt;unsigned int&gt;&gt;             incomingEdges;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  std::vector&lt;std::vector&lt;unsigned int&gt;&gt;             outgoingEdges;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <span class="keywordtype">void</span> changeGainToDelay(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <span class="keywordtype">void</span> changeDelayToGain(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="keywordtype">void</span> removeGain(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keywordtype">void</span> removeDelay(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keywordtype">void</span> removeUnkown(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keywordtype">void</span> removeUnkown(<span class="keyword">const</span> std::pair&lt;unsigned int, unsigned int&gt; <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="keywordtype">void</span> addGain(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keywordtype">void</span> addDelay(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="keywordtype">void</span> addUnknown(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="keywordtype">void</span> addUnknown(<span class="keyword">const</span> std::pair&lt;unsigned int, unsigned int&gt; <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>};</div>
+</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aParameters_8h_html"><div class="ttname"><a href="Parameters_8h.html">Parameters.h</a></div></div>
+<div class="ttc" id="aclassFilter_html"><div class="ttname"><a href="classFilter.html">Filter</a></div><div class="ttdef"><b>Definition</b> Filter.h:11</div></div>
+<div class="ttc" id="aclassFilter_html_a08cbe050517f0536e36befc24e776627"><div class="ttname"><a href="classFilter.html#a08cbe050517f0536e36befc24e776627">Filter::computeFitness</a></div><div class="ttdeci">void computeFitness(std::vector&lt; double &gt; &amp;input, std::vector&lt; double &gt; &amp;target)</div><div class="ttdoc">Calcula el fitness del filtro utilizando señales en el dominio de la tiempo.</div><div class="ttdef"><b>Definition</b> Filter.cpp:257</div></div>
+<div class="ttc" id="aclassFilter_html_a0f7e5c8a6fc022c0cc0c223da9316f08"><div class="ttname"><a href="classFilter.html#a0f7e5c8a6fc022c0cc0c223da9316f08">Filter::getJson</a></div><div class="ttdeci">Json::Value getJson()</div><div class="ttdoc">Obtiene un objeto JSON que describe al filtro.</div><div class="ttdef"><b>Definition</b> Filter.cpp:76</div></div>
+<div class="ttc" id="aclassFilter_html_a1255f04fae481ceccda72bd9f8eb6818"><div class="ttname"><a href="classFilter.html#a1255f04fae481ceccda72bd9f8eb6818">Filter::mutateMerge</a></div><div class="ttdeci">void mutateMerge(const unsigned int type)</div><div class="ttdoc">Escoge dos aristas contiguas del tipo indicado y las fusiona en una sola arista.</div><div class="ttdef"><b>Definition</b> Filter.cpp:542</div></div>
+<div class="ttc" id="aclassFilter_html_a1ffb015835fd093f49112007eaf50ed1"><div class="ttname"><a href="classFilter.html#a1ffb015835fd093f49112007eaf50ed1">Filter::mutateDelays</a></div><div class="ttdeci">void mutateDelays()</div><div class="ttdoc">Escoge una arista de retardo aleatoria y le asigna un valor entero aleatorio.</div><div class="ttdef"><b>Definition</b> Filter.cpp:350</div></div>
+<div class="ttc" id="aclassFilter_html_a3266931a040082540a81e874cff3e5ec"><div class="ttname"><a href="classFilter.html#a3266931a040082540a81e874cff3e5ec">Filter::mutateReciprocal</a></div><div class="ttdeci">void mutateReciprocal()</div><div class="ttdoc">Escoge una arista aleatoria y muta la arista recíproca.</div><div class="ttdef"><b>Definition</b> Filter.cpp:511</div></div>
+<div class="ttc" id="aclassFilter_html_a374f181f2638c91e92dd583fd6018a85"><div class="ttname"><a href="classFilter.html#a374f181f2638c91e92dd583fd6018a85">Filter::toString</a></div><div class="ttdeci">std::string toString()</div><div class="ttdoc">Imprime las matrices de la SFG del filtro.</div><div class="ttdef"><b>Definition</b> Filter.cpp:201</div></div>
+<div class="ttc" id="aclassFilter_html_a8495cc58e6efa01588f4b421b99a0df1"><div class="ttname"><a href="classFilter.html#a8495cc58e6efa01588f4b421b99a0df1">Filter::mutateEdges</a></div><div class="ttdeci">void mutateEdges()</div><div class="ttdoc">Escoge una arista aleatoria, cambia su tipo e inicializa su valor.</div><div class="ttdef"><b>Definition</b> Filter.cpp:309</div></div>
+<div class="ttc" id="aclassFilter_html_a8edb6018176017e4169feb57ec2fc12d"><div class="ttname"><a href="classFilter.html#a8edb6018176017e4169feb57ec2fc12d">Filter::exportCode</a></div><div class="ttdeci">std::string exportCode()</div><div class="ttdoc">Exporta el código de un filtro en C, teniendo en cuenta que los delays usarán buffers.</div><div class="ttdef"><b>Definition</b> Filter.cpp:356</div></div>
+<div class="ttc" id="aclassFilter_html_a9ada957b76c8ad1e63d15f4e57b608c5"><div class="ttname"><a href="classFilter.html#a9ada957b76c8ad1e63d15f4e57b608c5">Filter::type_layer</a></div><div class="ttdeci">unsigned int type_layer[Params::N][Params::N]</div><div class="ttdef"><b>Definition</b> Filter.h:183</div></div>
+<div class="ttc" id="aclassFilter_html_aab2c848d8ae2e9ed6ef863ad793d147f"><div class="ttname"><a href="classFilter.html#aab2c848d8ae2e9ed6ef863ad793d147f">Filter::mutateMergeUsingLonelyNodeAsSource</a></div><div class="ttdeci">void mutateMergeUsingLonelyNodeAsSource()</div><div class="ttdoc">Coge todos los retardos que salen de un mismo nodo, hace que surjan desde un nodo sin entradas ni sal...</div><div class="ttdef"><b>Definition</b> Filter.cpp:699</div></div>
+<div class="ttc" id="aclassFilter_html_abf23f4037d90aa0df6d2d7a2f1ad3ea7"><div class="ttname"><a href="classFilter.html#abf23f4037d90aa0df6d2d7a2f1ad3ea7">Filter::mutateMergeUsingLonelyNodeAsSink</a></div><div class="ttdeci">void mutateMergeUsingLonelyNodeAsSink()</div><div class="ttdoc">Coge todos los retardos que entran a un mismo nodo, hace que vayan a un nodo sin entradas ni salidas ...</div><div class="ttdef"><b>Definition</b> Filter.cpp:632</div></div>
+<div class="ttc" id="aclassFilter_html_abf81b8d76604a45308154ea4ecafbbb1"><div class="ttname"><a href="classFilter.html#abf81b8d76604a45308154ea4ecafbbb1">Filter::mutateConsecutiveEdges</a></div><div class="ttdeci">void mutateConsecutiveEdges()</div><div class="ttdoc">Escoge dos aristas contiguas y las intercambia.</div><div class="ttdef"><b>Definition</b> Filter.cpp:596</div></div>
+<div class="ttc" id="aclassFilter_html_adcd2d23039c5d957d629551a177d4ba1"><div class="ttname"><a href="classFilter.html#adcd2d23039c5d957d629551a177d4ba1">Filter::value_layer</a></div><div class="ttdeci">double value_layer[Params::N][Params::N]</div><div class="ttdef"><b>Definition</b> Filter.h:184</div></div>
+<div class="ttc" id="aclassFilter_html_af4f0f071499be1cf39ae3229d327e831"><div class="ttname"><a href="classFilter.html#af4f0f071499be1cf39ae3229d327e831">Filter::getFitness</a></div><div class="ttdeci">double getFitness()</div><div class="ttdoc">Obtiene el valor de fitness del filtro. Debe haber sido calculado previamente.</div><div class="ttdef"><b>Definition</b> Filter.cpp:255</div></div>
+<div class="ttc" id="aclassFilter_html_af617370c6d60e3e415ae7359342f74ef"><div class="ttname"><a href="classFilter.html#af617370c6d60e3e415ae7359342f74ef">Filter::crossover</a></div><div class="ttdeci">void crossover(const Filter &amp;parent_1, const Filter &amp;parent_2)</div><div class="ttdoc">Realiza el cruce entre dos filtros y genera un nuevo filtro. Debe ser llamado por el filtro hijo.</div><div class="ttdef"><b>Definition</b> Filter.cpp:766</div></div>
+<div class="ttc" id="aclassFilter_html_af9575bf8be188a6ba8e1ea9409194520"><div class="ttname"><a href="classFilter.html#af9575bf8be188a6ba8e1ea9409194520">Filter::mutateGains</a></div><div class="ttdeci">void mutateGains()</div><div class="ttdoc">Escoge una arista de ganancia aleatoria y le suma un valor aleatorio.</div><div class="ttdef"><b>Definition</b> Filter.cpp:344</div></div>
+<div class="ttc" id="anamespaceParams_html_adde41d146857cf933d73f0ade06036fb"><div class="ttname"><a href="namespaceParams.html#adde41d146857cf933d73f0ade06036fb">Params::N</a></div><div class="ttdeci">static const unsigned int N</div><div class="ttdoc">Tamaño de la matriz cuadrada .</div><div class="ttdef"><b>Definition</b> Parameters.h:34</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="Filter_8h.html">Filter.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>
