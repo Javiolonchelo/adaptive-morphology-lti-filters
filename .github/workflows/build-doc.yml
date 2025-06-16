@@ -8,13 +8,15 @@ on:
 
 jobs:
   build-doc:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           submodules: 'recursive'
-
 
       - name: Set up CMake
         uses: jwlawson/actions-setup-cmake@v1
@@ -33,14 +35,14 @@ jobs:
       - name: Build doc target
         run: cmake --build build --target doc
 
-      - name: Upload documentation artifact
-        uses: actions/upload-artifact@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: doc
-          path: doc/
-      
+          path: 'doc/html'
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: doc/
+        id: deployment
+        uses: actions/deploy-pages@v4
