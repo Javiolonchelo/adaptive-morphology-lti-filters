@@ -29,3 +29,15 @@ jobs:
 
       - name: Build doc target
         run: cmake --build build --target doc
+
+      - name: Upload HTML documentation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: doc-html
+          path: doc/html/
+
+      - name: Upload LaTeX documentation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: doc-latex
+          path: doc/latex/
