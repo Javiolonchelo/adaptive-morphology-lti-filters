@@ -41,6 +41,10 @@ message(STATUS "Doxygen found: ${DOXYGEN_EXECUTABLE}")
 add_custom_target(
   doc
   COMMAND ${DOXYGEN_EXECUTABLE} "${CMAKE_SOURCE_DIR}/doc/Doxyfile"
+  # now copy the generated index.html to the workspace root
+  COMMAND
+    ${CMAKE_COMMAND} -E copy_if_different
+    "${CMAKE_SOURCE_DIR}/doc/html/index.html" "${CMAKE_SOURCE_DIR}/index.html"
   WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
   COMMENT "Generating API documentation with Doxygen")
 
