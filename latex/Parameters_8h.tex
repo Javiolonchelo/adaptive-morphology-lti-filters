@@ -1,0 +1,162 @@
+\doxysection{Referencia del archivo src/\+Parameters.h}
+\hypertarget{Parameters_8h}{}\label{Parameters_8h}\index{src/Parameters.h@{src/Parameters.h}}
+{\ttfamily \#include $<$json/json.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include "{}omp.\+h"{}}\newline
+Gráfico de dependencias incluidas en Parameters.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Parameters_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Parameters_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Espacios de nombres}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceHelpers}{Helpers}}
+\item 
+namespace \mbox{\hyperlink{namespaceParams}{Params}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Parameters_8h_a525335710b53cb064ca56b936120431e}{\+\_\+\+USE\+\_\+\+MATH\+\_\+\+DEFINES}}
+\item 
+\#define \mbox{\hyperlink{Parameters_8h_a788be1e5263200d55dddebd3606ccad4}{CLEAR\+\_\+\+SCREEN}}~"{}\textbackslash{}033\mbox{[}1;1H"{}
+\item 
+\#define \mbox{\hyperlink{Parameters_8h_a0bc26f84308643c9925657e9bd4f21a9}{CLEAR\+\_\+\+SCREEN\+\_\+\+FR}}~"{}\textbackslash{}033\mbox{[}H\textbackslash{}033\mbox{[}J"{}
+\item 
+\#define \mbox{\hyperlink{Parameters_8h_ab0ed582bd1d1f9ecdc30a2bf711df24a}{ERASE\+\_\+\+LINE}}~"{}\textbackslash{}033\mbox{[}A\textbackslash{}033\mbox{[}K"{}
+\item 
+\#define \mbox{\hyperlink{Parameters_8h_a22b9d6a5652b0db56f72c4326e2d1f41}{MOVE\+\_\+\+TO\+\_\+\+COLUMN}}(x)~"{}\textbackslash{}033\mbox{[}"{} \#x "{}G"{}
+\item 
+\#define \mbox{\hyperlink{Parameters_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}~6
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedce}{Params\+::\+Signal\+Type}} \{ \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a}{Params\+::\+IMPULSE}}
+, \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedcea5e2eb471621ac5e0288a9a432491dabd}{Params\+::\+WHITE\+\_\+\+NOISE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Los diferentes tipos disponibles para la señal de entrada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{Indent}\textbf{ DSP}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceHelpers_a379533948ff739329c4d4731aeaf73dd}{Helpers\+::create\+Signal}} (std\+::vector$<$ double $>$ \&result, \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedce}{Params\+::\+Signal\+Type}} signal\+\_\+type, const unsigned int L)
+\begin{DoxyCompactList}\small\item\em Crea una señal de entrada en función del tipo escogido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceHelpers_aac1b4790b58de2b884dc8cc3024ca435}{Helpers\+::filter\+Using\+Difference\+Equation}} (std\+::vector$<$ double $>$ \&in, std\+::vector$<$ double $>$ \&out, const std\+::vector$<$ double $>$ b, const std\+::vector$<$ double $>$ a, const unsigned int L)
+\begin{DoxyCompactList}\small\item\em Filtra una señal mediante una ecuación en diferencias. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Generadores de números aleatorios}\par
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespaceHelpers_abc79d0984e865f907b1a049842c7681a}{Helpers\+::random\+Double}} (double min=0, double max=1)
+\begin{DoxyCompactList}\small\item\em Genera un número aleatorio de tipo {\ttfamily double} entre {\ttfamily min} y {\ttfamily max}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespaceHelpers_a675baac9be98003c5a89bfff7adb12c4}{Helpers\+::random\+Double\+Normal}} (double mean=0, double stddev=0.\+01)
+\begin{DoxyCompactList}\small\item\em Genera un número aleatorio de tipo {\ttfamily double} con una distribución normal. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceHelpers_ac18da6249ccf9685030c0532a332c3ff}{Helpers\+::random\+Int}} (int min=0, int max=INT\+\_\+\+MAX)
+\begin{DoxyCompactList}\small\item\em Genera un número aleatorio entero entre {\ttfamily min} y {\ttfamily max} (incluidos). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const float \mbox{\hyperlink{namespaceParams_aa10a2b7a63bae9cd80ba6eaa6d0772b7}{Params\+::\+CROSSOVER\+\_\+\+RATE}} = 0.\+4
+\begin{DoxyCompactList}\small\item\em Probabilidad de cruce. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{namespaceParams_ac9d1f5c1aa22082a4e6131546949ec15}{Params\+::\+EXIT\+\_\+\+THRESHOLD}} = 0.\+999
+\begin{DoxyCompactList}\small\item\em Umbral de salida del algoritmo. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedce}{Signal\+Type}} \mbox{\hyperlink{namespaceParams_aa7acf99c30afbc9f896149f028ad083e}{Params\+::input\+Signal\+\_\+\+TYPE}} = \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a}{Signal\+Type\+::\+IMPULSE}}
+\begin{DoxyCompactList}\small\item\em Tipo de señal de entrada. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{namespaceParams_abb54b174f99877786b1b5152c8c59432}{Params\+::\+MAX\+\_\+\+DELAY}} = 50
+\begin{DoxyCompactList}\small\item\em Valor máximo de retardo permitido. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{namespaceParams_a5bf9b308e8a45f6b1f0f51f59b499a3c}{Params\+::\+MAX\+\_\+\+DEPENDENCIES}} = \mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{N}}
+\begin{DoxyCompactList}\small\item\em Máximo número de dependencias permitidas por nodo. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{namespaceParams_a43fc697a445946dc070a510b5d819541}{Params\+::\+MAX\+\_\+\+GENERATIONS}} = 10000
+\begin{DoxyCompactList}\small\item\em Número máximo de generaciones a ejecutar. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{namespaceParams_ac9775a0487472d2dcd51bb6441c57057}{Params\+::\+MAX\+\_\+\+GENES\+\_\+\+CHANGED}} = 5
+\begin{DoxyCompactList}\small\item\em Máximo número de genes a cambiar en una mutación. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{namespaceParams_a22f342e5377d8214dbed166421ae0257}{Params\+::\+MUTATION\+\_\+\+RATE}} = 0.\+4
+\begin{DoxyCompactList}\small\item\em Probabilidad de mutación. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{Params\+::N}} = 30
+\begin{DoxyCompactList}\small\item\em Tamaño de la matriz cuadrada $ (N \times N) $. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{namespaceParams_a4db65a5ed08e25bd8c2400ef3a44596f}{Params\+::\+NUM\+\_\+\+THREADS}} = 8
+\begin{DoxyCompactList}\small\item\em Número de hilos a usar en la ejecución. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{namespaceParams_aa3bae3068a397bd3e87c4bce4fcab198}{Params\+::\+PENALTY\+\_\+\+MEMORY}} = 1e-\/6
+\begin{DoxyCompactList}\small\item\em Penalización por memoria ocupada. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{namespaceParams_a2834d8ce3e722e8efd4e8ca20696c364}{Params\+::\+PENALTY\+\_\+\+MSE}} = 1e2
+\begin{DoxyCompactList}\small\item\em Penalización por error cuadrático medio (MSE). \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{namespaceParams_a6fe941bce457463a8c8a903ff6facf16}{Params\+::\+PENALTY\+\_\+\+NUM\+\_\+\+ADDITIONS}} = 1e-\/6
+\begin{DoxyCompactList}\small\item\em Penalización por número de sumas. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{namespaceParams_aaa4989ccec6610aae9e400b6729780e8}{Params\+::\+PENALTY\+\_\+\+NUM\+\_\+\+GAINS}} = 1e-\/6
+\begin{DoxyCompactList}\small\item\em Penalización por número de ganancias. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{namespaceParams_a04785090759b34ac9462949e04fa0fdd}{Params\+::\+POPULATION\+\_\+\+SIZE}} = 1000
+\begin{DoxyCompactList}\small\item\em Tamaño de la población. \end{DoxyCompactList}\item 
+static const bool \mbox{\hyperlink{namespaceParams_ae17249460a1f340f94077f9bd41cf398}{Params\+::\+PRINT\+\_\+\+MATRIX}} = true
+\begin{DoxyCompactList}\small\item\em Si es {\ttfamily true}, imprime la matriz de conexiones en cada generación. \end{DoxyCompactList}\item 
+static const bool \mbox{\hyperlink{namespaceParams_a9406f498f2fb9a0804136b67dc4131cf}{Params\+::\+SAVE\+\_\+\+RESULTS}} = true
+\begin{DoxyCompactList}\small\item\em Si es {\ttfamily true}, guarda los resultados en un archivo JSON. \end{DoxyCompactList}\item 
+static const unsigned int \mbox{\hyperlink{namespaceParams_a50298ced78a3bd8ccdd5f42fe930445f}{Params\+::\+SURVIVORS}} = 450
+\begin{DoxyCompactList}\small\item\em Número de individuos supervivientes de la población. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Generador de números aleatorios}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::mt19937 \mbox{\hyperlink{namespaceHelpers_a4130f0e39e22d3ba14599307bde66467}{Helpers\+::gen}} (\mbox{\hyperlink{namespaceHelpers_a177af695531d398b06458eb9a4243800}{rd}}())
+\begin{DoxyCompactList}\small\item\em Instancia del generador Mersenne-\/\+Twister. \end{DoxyCompactList}\item 
+static std\+::random\+\_\+device \mbox{\hyperlink{namespaceHelpers_a177af695531d398b06458eb9a4243800}{Helpers\+::rd}}
+\begin{DoxyCompactList}\small\item\em Generador de números aleatorios de la librería estándar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de «define»}
+\Hypertarget{Parameters_8h_a525335710b53cb064ca56b936120431e}\label{Parameters_8h_a525335710b53cb064ca56b936120431e} 
+\index{Parameters.h@{Parameters.h}!\_USE\_MATH\_DEFINES@{\_USE\_MATH\_DEFINES}}
+\index{\_USE\_MATH\_DEFINES@{\_USE\_MATH\_DEFINES}!Parameters.h@{Parameters.h}}
+\doxysubsubsection{\texorpdfstring{\_USE\_MATH\_DEFINES}{\_USE\_MATH\_DEFINES}}
+{\footnotesize\ttfamily \#define \+\_\+\+USE\+\_\+\+MATH\+\_\+\+DEFINES}
+
+\Hypertarget{Parameters_8h_a788be1e5263200d55dddebd3606ccad4}\label{Parameters_8h_a788be1e5263200d55dddebd3606ccad4} 
+\index{Parameters.h@{Parameters.h}!CLEAR\_SCREEN@{CLEAR\_SCREEN}}
+\index{CLEAR\_SCREEN@{CLEAR\_SCREEN}!Parameters.h@{Parameters.h}}
+\doxysubsubsection{\texorpdfstring{CLEAR\_SCREEN}{CLEAR\_SCREEN}}
+{\footnotesize\ttfamily \#define CLEAR\+\_\+\+SCREEN~"{}\textbackslash{}033\mbox{[}1;1H"{}}
+
+\Hypertarget{Parameters_8h_a0bc26f84308643c9925657e9bd4f21a9}\label{Parameters_8h_a0bc26f84308643c9925657e9bd4f21a9} 
+\index{Parameters.h@{Parameters.h}!CLEAR\_SCREEN\_FR@{CLEAR\_SCREEN\_FR}}
+\index{CLEAR\_SCREEN\_FR@{CLEAR\_SCREEN\_FR}!Parameters.h@{Parameters.h}}
+\doxysubsubsection{\texorpdfstring{CLEAR\_SCREEN\_FR}{CLEAR\_SCREEN\_FR}}
+{\footnotesize\ttfamily \#define CLEAR\+\_\+\+SCREEN\+\_\+\+FR~"{}\textbackslash{}033\mbox{[}H\textbackslash{}033\mbox{[}J"{}}
+
+\Hypertarget{Parameters_8h_ab0ed582bd1d1f9ecdc30a2bf711df24a}\label{Parameters_8h_ab0ed582bd1d1f9ecdc30a2bf711df24a} 
+\index{Parameters.h@{Parameters.h}!ERASE\_LINE@{ERASE\_LINE}}
+\index{ERASE\_LINE@{ERASE\_LINE}!Parameters.h@{Parameters.h}}
+\doxysubsubsection{\texorpdfstring{ERASE\_LINE}{ERASE\_LINE}}
+{\footnotesize\ttfamily \#define ERASE\+\_\+\+LINE~"{}\textbackslash{}033\mbox{[}A\textbackslash{}033\mbox{[}K"{}}
+
+\Hypertarget{Parameters_8h_a22b9d6a5652b0db56f72c4326e2d1f41}\label{Parameters_8h_a22b9d6a5652b0db56f72c4326e2d1f41} 
+\index{Parameters.h@{Parameters.h}!MOVE\_TO\_COLUMN@{MOVE\_TO\_COLUMN}}
+\index{MOVE\_TO\_COLUMN@{MOVE\_TO\_COLUMN}!Parameters.h@{Parameters.h}}
+\doxysubsubsection{\texorpdfstring{MOVE\_TO\_COLUMN}{MOVE\_TO\_COLUMN}}
+{\footnotesize\ttfamily \#define MOVE\+\_\+\+TO\+\_\+\+COLUMN(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~"{}\textbackslash{}033\mbox{[}"{} \#x "{}G"{}}
+
+\Hypertarget{Parameters_8h_a241aeeb764887ae5e3de58b98f04b16d}\label{Parameters_8h_a241aeeb764887ae5e3de58b98f04b16d} 
+\index{Parameters.h@{Parameters.h}!WIDTH@{WIDTH}}
+\index{WIDTH@{WIDTH}!Parameters.h@{Parameters.h}}
+\doxysubsubsection{\texorpdfstring{WIDTH}{WIDTH}}
+{\footnotesize\ttfamily \#define WIDTH~6}
+

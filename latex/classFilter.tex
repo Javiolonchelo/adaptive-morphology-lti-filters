@@ -1,0 +1,318 @@
+\doxysection{Referencia de la clase Filter}
+\hypertarget{classFilter}{}\label{classFilter}\index{Filter@{Filter}}
+
+
+{\ttfamily \#include $<$Filter.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{Indent}\textbf{ Constructores}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFilter_a4d8b2a39bbf00bb8070464b0367a9836}{Filter}} (unsigned int L)
+\begin{DoxyCompactList}\small\item\em Construye un filtro con capacidad para procesar señales de longitud L. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFilter_a4cfeb67f51440141971567fbcbe4b8b3}{Filter}} (const Json\+::\+Value \&json)
+\begin{DoxyCompactList}\small\item\em Construye un filtro a partir de un objeto JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Operadores genéticos}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classFilter_a8495cc58e6efa01588f4b421b99a0df1}{mutate\+Edges}} ()
+\begin{DoxyCompactList}\small\item\em Escoge una arista aleatoria, cambia su tipo e inicializa su valor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilter_af9575bf8be188a6ba8e1ea9409194520}{mutate\+Gains}} ()
+\begin{DoxyCompactList}\small\item\em Escoge una arista de ganancia aleatoria y le suma un valor aleatorio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilter_a1ffb015835fd093f49112007eaf50ed1}{mutate\+Delays}} ()
+\begin{DoxyCompactList}\small\item\em Escoge una arista de retardo aleatoria y le asigna un valor entero aleatorio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilter_a3266931a040082540a81e874cff3e5ec}{mutate\+Reciprocal}} ()
+\begin{DoxyCompactList}\small\item\em Escoge una arista aleatoria y muta la arista recíproca. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilter_a1255f04fae481ceccda72bd9f8eb6818}{mutate\+Merge}} (const unsigned int type)
+\begin{DoxyCompactList}\small\item\em Escoge dos aristas contiguas del tipo indicado y las fusiona en una sola arista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilter_abf81b8d76604a45308154ea4ecafbbb1}{mutate\+Consecutive\+Edges}} ()
+\begin{DoxyCompactList}\small\item\em Escoge dos aristas contiguas y las intercambia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilter_abf23f4037d90aa0df6d2d7a2f1ad3ea7}{mutate\+Merge\+Using\+Lonely\+Node\+As\+Sink}} ()
+\begin{DoxyCompactList}\small\item\em Coge todos los retardos que entran a un mismo nodo, hace que vayan a un nodo sin entradas ni salidas y conecta como única salida de este nodo el nodo escogido con el valor de retardo de una de las aristas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilter_aab2c848d8ae2e9ed6ef863ad793d147f}{mutate\+Merge\+Using\+Lonely\+Node\+As\+Source}} ()
+\begin{DoxyCompactList}\small\item\em Coge todos los retardos que salen de un mismo nodo, hace que surjan desde un nodo sin entradas ni salidas y conecta como única entrada de este nodo el nodo escogido con el valor de retardo de una de las aristas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilter_af617370c6d60e3e415ae7359342f74ef}{crossover}} (const \mbox{\hyperlink{classFilter}{Filter}} \&parent\+\_\+1, const \mbox{\hyperlink{classFilter}{Filter}} \&parent\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Realiza el cruce entre dos filtros y genera un nuevo filtro. Debe ser llamado por el filtro hijo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Evaluación}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classFilter_a08cbe050517f0536e36befc24e776627}{compute\+Fitness}} (std\+::vector$<$ double $>$ \&input, std\+::vector$<$ double $>$ \&target)
+\begin{DoxyCompactList}\small\item\em Calcula el fitness del filtro utilizando señales en el dominio de la tiempo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Utilidades}\par
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classFilter_a8edb6018176017e4169feb57ec2fc12d}{export\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Exporta el código de un filtro en C, teniendo en cuenta que los delays usarán buffers. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classFilter_a374f181f2638c91e92dd583fd6018a85}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Imprime las matrices de la SFG del filtro. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classFilter_af4f0f071499be1cf39ae3229d327e831}{get\+Fitness}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el valor de fitness del filtro. Debe haber sido calculado previamente. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{classFilter_a0f7e5c8a6fc022c0cc0c223da9316f08}{get\+Json}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene un objeto JSON que describe al filtro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classFilter_a9ada957b76c8ad1e63d15f4e57b608c5}{type\+\_\+layer}} \mbox{[}\mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{Params\+::N}}\mbox{]}\mbox{[}\mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{Params\+::N}}\mbox{]}
+\item 
+double \mbox{\hyperlink{classFilter_adcd2d23039c5d957d629551a177d4ba1}{value\+\_\+layer}} \mbox{[}\mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{Params\+::N}}\mbox{]}\mbox{[}\mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{Params\+::N}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{classFilter_a4d8b2a39bbf00bb8070464b0367a9836}\label{classFilter_a4d8b2a39bbf00bb8070464b0367a9836} 
+\index{Filter@{Filter}!Filter@{Filter}}
+\index{Filter@{Filter}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{Filter()}{Filter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Filter\+::\+Filter (\begin{DoxyParamCaption}\item[{unsigned int}]{L }\end{DoxyParamCaption})}
+
+
+
+Construye un filtro con capacidad para procesar señales de longitud L. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em L} & Longitud de la señal de entrada. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFilter_a4cfeb67f51440141971567fbcbe4b8b3}\label{classFilter_a4cfeb67f51440141971567fbcbe4b8b3} 
+\index{Filter@{Filter}!Filter@{Filter}}
+\index{Filter@{Filter}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{Filter()}{Filter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Filter\+::\+Filter (\begin{DoxyParamCaption}\item[{const Json\+::\+Value \&}]{json }\end{DoxyParamCaption})}
+
+
+
+Construye un filtro a partir de un objeto JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em json} & Objeto JSON con la información del filtro. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classFilter_a08cbe050517f0536e36befc24e776627}\label{classFilter_a08cbe050517f0536e36befc24e776627} 
+\index{Filter@{Filter}!computeFitness@{computeFitness}}
+\index{computeFitness@{computeFitness}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{computeFitness()}{computeFitness()}}
+{\footnotesize\ttfamily void Filter\+::compute\+Fitness (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{input,  }\item[{std\+::vector$<$ double $>$ \&}]{target }\end{DoxyParamCaption})}
+
+
+
+Calcula el fitness del filtro utilizando señales en el dominio de la tiempo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em input} & Señal de entrada del filtro. \\
+\hline
+{\em target} & Espectro de la señal de salida deseada. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFilter_af617370c6d60e3e415ae7359342f74ef}\label{classFilter_af617370c6d60e3e415ae7359342f74ef} 
+\index{Filter@{Filter}!crossover@{crossover}}
+\index{crossover@{crossover}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{crossover()}{crossover()}}
+{\footnotesize\ttfamily void Filter\+::crossover (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFilter}{Filter}} \&}]{parent\+\_\+1,  }\item[{const \mbox{\hyperlink{classFilter}{Filter}} \&}]{parent\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Realiza el cruce entre dos filtros y genera un nuevo filtro. Debe ser llamado por el filtro hijo. 
+
+El cruce consiste en cruzar las matrices de adyacencia de los filtros progenitores a partir de una columna de posición aleatoria. Es decir, la matriz de adyacencia del hijo se obtiene usando la matriz del primer progenitor desde la columna 0 hasta la columna de cruce, y la matriz del segundo progenitor desde la columna de cruce hasta la última columna.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em parent\+\_\+1} & El primer filtro progenitor. \\
+\hline
+{\em parent\+\_\+2} & El segundo filtro progenitor. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFilter_a8edb6018176017e4169feb57ec2fc12d}\label{classFilter_a8edb6018176017e4169feb57ec2fc12d} 
+\index{Filter@{Filter}!exportCode@{exportCode}}
+\index{exportCode@{exportCode}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{exportCode()}{exportCode()}}
+{\footnotesize\ttfamily std\+::string Filter\+::export\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exporta el código de un filtro en C, teniendo en cuenta que los delays usarán buffers. 
+
+\begin{DoxyReturn}{Devuelve}
+std\+::string 
+\end{DoxyReturn}
+\Hypertarget{classFilter_af4f0f071499be1cf39ae3229d327e831}\label{classFilter_af4f0f071499be1cf39ae3229d327e831} 
+\index{Filter@{Filter}!getFitness@{getFitness}}
+\index{getFitness@{getFitness}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{getFitness()}{getFitness()}}
+{\footnotesize\ttfamily double Filter\+::get\+Fitness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene el valor de fitness del filtro. Debe haber sido calculado previamente. 
+
+\begin{DoxyReturn}{Devuelve}
+double 
+\end{DoxyReturn}
+\Hypertarget{classFilter_a0f7e5c8a6fc022c0cc0c223da9316f08}\label{classFilter_a0f7e5c8a6fc022c0cc0c223da9316f08} 
+\index{Filter@{Filter}!getJson@{getJson}}
+\index{getJson@{getJson}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{getJson()}{getJson()}}
+{\footnotesize\ttfamily Json\+::\+Value Filter\+::get\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene un objeto JSON que describe al filtro. 
+
+\begin{DoxyReturn}{Devuelve}
+Json\+::\+Value
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \ \ \ "{}N"{}\ \ \ \ \ \ \ \ \ \ \ \ \ :\ int,\ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Tamaño\ de\ la\ matriz\ cuadrada}
+\DoxyCodeLine{(N\ x\ N)\ "{}fitness"{}\ \ \ \ \ \ \ :\ double,\ \ \ \ \ \ \ \ \ \ \ //\ Valor\ de\ fitness\ calculado}
+\DoxyCodeLine{\ \ \ \ \ "{}inputNode"{}\ \ \ \ \ :\ int,\ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Índice\ del\ nodo\ de\ entrada}
+\DoxyCodeLine{\ \ \ \ \ "{}outputNode"{}\ \ \ \ :\ int,\ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Índice\ del\ nodo\ de\ salida}
+\DoxyCodeLine{\ \ \ \ \ "{}type\_layer"{}\ \ \ \ :\ [\ int,\ ...\ ]\ ,\ \ \ \ //\ Matriz\ de\ tipos}
+\DoxyCodeLine{(type\_layer[i*N\ +\ j])\ "{}value\_layer"{}\ \ \ :\ [\ double,\ ...\ ]\ \ \ //\ Matriz\ de}
+\DoxyCodeLine{valores\ (value\_layer[i*N\ +\ j])}
+\DoxyCodeLine{\ \}}
+
+\end{DoxyCode}
+ \Hypertarget{classFilter_abf81b8d76604a45308154ea4ecafbbb1}\label{classFilter_abf81b8d76604a45308154ea4ecafbbb1} 
+\index{Filter@{Filter}!mutateConsecutiveEdges@{mutateConsecutiveEdges}}
+\index{mutateConsecutiveEdges@{mutateConsecutiveEdges}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{mutateConsecutiveEdges()}{mutateConsecutiveEdges()}}
+{\footnotesize\ttfamily void Filter\+::mutate\+Consecutive\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Escoge dos aristas contiguas y las intercambia. 
+
+\Hypertarget{classFilter_a1ffb015835fd093f49112007eaf50ed1}\label{classFilter_a1ffb015835fd093f49112007eaf50ed1} 
+\index{Filter@{Filter}!mutateDelays@{mutateDelays}}
+\index{mutateDelays@{mutateDelays}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{mutateDelays()}{mutateDelays()}}
+{\footnotesize\ttfamily void Filter\+::mutate\+Delays (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Escoge una arista de retardo aleatoria y le asigna un valor entero aleatorio. 
+
+\Hypertarget{classFilter_a8495cc58e6efa01588f4b421b99a0df1}\label{classFilter_a8495cc58e6efa01588f4b421b99a0df1} 
+\index{Filter@{Filter}!mutateEdges@{mutateEdges}}
+\index{mutateEdges@{mutateEdges}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{mutateEdges()}{mutateEdges()}}
+{\footnotesize\ttfamily void Filter\+::mutate\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Escoge una arista aleatoria, cambia su tipo e inicializa su valor. 
+
+\Hypertarget{classFilter_af9575bf8be188a6ba8e1ea9409194520}\label{classFilter_af9575bf8be188a6ba8e1ea9409194520} 
+\index{Filter@{Filter}!mutateGains@{mutateGains}}
+\index{mutateGains@{mutateGains}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{mutateGains()}{mutateGains()}}
+{\footnotesize\ttfamily void Filter\+::mutate\+Gains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Escoge una arista de ganancia aleatoria y le suma un valor aleatorio. 
+
+\Hypertarget{classFilter_a1255f04fae481ceccda72bd9f8eb6818}\label{classFilter_a1255f04fae481ceccda72bd9f8eb6818} 
+\index{Filter@{Filter}!mutateMerge@{mutateMerge}}
+\index{mutateMerge@{mutateMerge}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{mutateMerge()}{mutateMerge()}}
+{\footnotesize\ttfamily void Filter\+::mutate\+Merge (\begin{DoxyParamCaption}\item[{const unsigned int}]{type }\end{DoxyParamCaption})}
+
+
+
+Escoge dos aristas contiguas del tipo indicado y las fusiona en una sola arista. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em type} & Tipo de la nueva arista. {\ttfamily 1} para ganancia y {\ttfamily 2} para retardo. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFilter_abf23f4037d90aa0df6d2d7a2f1ad3ea7}\label{classFilter_abf23f4037d90aa0df6d2d7a2f1ad3ea7} 
+\index{Filter@{Filter}!mutateMergeUsingLonelyNodeAsSink@{mutateMergeUsingLonelyNodeAsSink}}
+\index{mutateMergeUsingLonelyNodeAsSink@{mutateMergeUsingLonelyNodeAsSink}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{mutateMergeUsingLonelyNodeAsSink()}{mutateMergeUsingLonelyNodeAsSink()}}
+{\footnotesize\ttfamily void Filter\+::mutate\+Merge\+Using\+Lonely\+Node\+As\+Sink (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coge todos los retardos que entran a un mismo nodo, hace que vayan a un nodo sin entradas ni salidas y conecta como única salida de este nodo el nodo escogido con el valor de retardo de una de las aristas. 
+
+\Hypertarget{classFilter_aab2c848d8ae2e9ed6ef863ad793d147f}\label{classFilter_aab2c848d8ae2e9ed6ef863ad793d147f} 
+\index{Filter@{Filter}!mutateMergeUsingLonelyNodeAsSource@{mutateMergeUsingLonelyNodeAsSource}}
+\index{mutateMergeUsingLonelyNodeAsSource@{mutateMergeUsingLonelyNodeAsSource}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{mutateMergeUsingLonelyNodeAsSource()}{mutateMergeUsingLonelyNodeAsSource()}}
+{\footnotesize\ttfamily void Filter\+::mutate\+Merge\+Using\+Lonely\+Node\+As\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coge todos los retardos que salen de un mismo nodo, hace que surjan desde un nodo sin entradas ni salidas y conecta como única entrada de este nodo el nodo escogido con el valor de retardo de una de las aristas. 
+
+\Hypertarget{classFilter_a3266931a040082540a81e874cff3e5ec}\label{classFilter_a3266931a040082540a81e874cff3e5ec} 
+\index{Filter@{Filter}!mutateReciprocal@{mutateReciprocal}}
+\index{mutateReciprocal@{mutateReciprocal}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{mutateReciprocal()}{mutateReciprocal()}}
+{\footnotesize\ttfamily void Filter\+::mutate\+Reciprocal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Escoge una arista aleatoria y muta la arista recíproca. 
+
+Decimos que la arista recíproca de una arista $ (i,j) $ es la arista $ (j,i) $. Tenemos tres casos posibles\+:
+\begin{DoxyEnumerate}
+\item La arista seleccionada es de ganancia. Entonces convierte su recíproca en retardo y la inicializa.
+\item La arista seleccionada es de retardo. Entonces comprueba si la recíproca puede ser una ganancia (es decir, $ (j,i) $ queda por encima de la diagonal) y la inicializa.
+\item Si en el caso anterior la recíproca no puede ser una ganancia, entonces convierte la arista actual en ganancia y la recíproca en retardo, e inicializa ambas. 
+\end{DoxyEnumerate}\Hypertarget{classFilter_a374f181f2638c91e92dd583fd6018a85}\label{classFilter_a374f181f2638c91e92dd583fd6018a85} 
+\index{Filter@{Filter}!toString@{toString}}
+\index{toString@{toString}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Filter\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Imprime las matrices de la SFG del filtro. 
+
+Imprime tanto la capa de tipo como la capa de valor. El color de cada elemento sigue la siguiente leyenda\+:
+\begin{DoxyItemize}
+\item Color por defecto. No existe arista.
+\item Azul\+: Retardo.
+\item Verde\+: Ganancia.
+\item Rojo\+: Valor de ganancia en la diagonal o debajo de ella. Esto indica que el filtro puede no ser computable. Por diseño, este caso no debería darse. Sirve para detectar errores.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Devuelve}
+std\+::string Representación de la SFG del filtro. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classFilter_a9ada957b76c8ad1e63d15f4e57b608c5}\label{classFilter_a9ada957b76c8ad1e63d15f4e57b608c5} 
+\index{Filter@{Filter}!type\_layer@{type\_layer}}
+\index{type\_layer@{type\_layer}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{type\_layer}{type\_layer}}
+{\footnotesize\ttfamily unsigned int Filter\+::type\+\_\+layer\mbox{[}\mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{Params\+::N}}\mbox{]}\mbox{[}\mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{Params\+::N}}\mbox{]}}
+
+\Hypertarget{classFilter_adcd2d23039c5d957d629551a177d4ba1}\label{classFilter_adcd2d23039c5d957d629551a177d4ba1} 
+\index{Filter@{Filter}!value\_layer@{value\_layer}}
+\index{value\_layer@{value\_layer}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{value\_layer}{value\_layer}}
+{\footnotesize\ttfamily double Filter\+::value\+\_\+layer\mbox{[}\mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{Params\+::N}}\mbox{]}\mbox{[}\mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{Params\+::N}}\mbox{]}}
+
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{Filter_8h}{Filter.\+h}}\item 
+src/\mbox{\hyperlink{Filter_8cpp}{Filter.\+cpp}}\end{DoxyCompactItemize}

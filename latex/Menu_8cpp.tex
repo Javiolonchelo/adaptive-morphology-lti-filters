@@ -1,0 +1,47 @@
+\doxysection{Referencia del archivo src/\+Menu.cpp}
+\hypertarget{Menu_8cpp}{}\label{Menu_8cpp}\index{src/Menu.cpp@{src/Menu.cpp}}
+{\ttfamily \#include "{}Menu.\+h"{}}\newline
+Gráfico de dependencias incluidas en Menu.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Menu_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{Menu_8cpp_ac020af2b1666c274da8fe54b850d5146}{Menu}} (std\+::vector$<$ double $>$ \&input\+Signal, std\+::vector$<$ double $>$ \&target\+Time, unsigned int \&L, std\+::string filter\+Name="{}"{}, std\+::string output\+File="{}output/results"{}, int mode=-\/1)
+\begin{DoxyCompactList}\small\item\em Esta función sirve para implementar un menú cuando es ejecutado desde la línea de comandos. Esta función no está implementada, y sirve como mero intermediario entre {\ttfamily \doxylink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main()}} y el algoritmo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de funciones}
+\Hypertarget{Menu_8cpp_ac020af2b1666c274da8fe54b850d5146}\label{Menu_8cpp_ac020af2b1666c274da8fe54b850d5146} 
+\index{Menu.cpp@{Menu.cpp}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu.cpp@{Menu.cpp}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily int Menu (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{input\+Signal,  }\item[{std\+::vector$<$ double $>$ \&}]{target\+Time,  }\item[{unsigned int \&}]{L,  }\item[{std\+::string}]{filter\+Name,  }\item[{std\+::string}]{output\+File,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+
+
+Esta función sirve para implementar un menú cuando es ejecutado desde la línea de comandos. Esta función no está implementada, y sirve como mero intermediario entre {\ttfamily \doxylink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main()}} y el algoritmo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em input\+Signal} & Vector donde se almacenará la señal de entrada generada. \\
+\hline
+{\em target\+Time} & Vector donde se almacenará la señal objetivo. \\
+\hline
+{\em L} & Longitud de las señales. \\
+\hline
+{\em filter\+Name} & Nombre del filtro a buscar. \\
+\hline
+{\em output\+File} & Nombre del archivo de salida. \\
+\hline
+{\em mode} & Modo de operación del menú. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+0 si se ejecuta correctamente, 1 si ocurre algún error. 
+\end{DoxyReturn}
