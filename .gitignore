@@ -1,0 +1,20 @@
+build*
+.venv/
+.vscode*
+figures/
+results**
+bodePlots/
+parsedResults*
+count-results/
+json-source/
+maxFitnessResults.json
+
+# Matlab files
+*.asv
+
+doc/html/
+doc/latex/
+PluginDemo/cmake*
+PluginDemo/.idea
+PluginDemo/docs/html
+PluginDemo/docs/latex
