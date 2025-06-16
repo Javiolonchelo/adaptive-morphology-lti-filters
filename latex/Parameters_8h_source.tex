@@ -1,0 +1,82 @@
+\doxysection{Parameters.\+h}
+\hypertarget{Parameters_8h_source}{}\label{Parameters_8h_source}\index{src/Parameters.h@{src/Parameters.h}}
+\mbox{\hyperlink{Parameters_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARAMETERS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARAMETERS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ \_USE\_MATH\_DEFINES}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <json/json.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}omp.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceParams}{Params}}\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedce}{SignalType}}\ \{}
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a}{IMPULSE}},\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedcea5e2eb471621ac5e0288a9a432491dabd}{WHITE\_NOISE}}\ \ }
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedce}{SignalType}}\ \ \ \mbox{\hyperlink{namespaceParams_aa7acf99c30afbc9f896149f028ad083e}{inputSignal\_TYPE}}\ \ \ \ \ \ =\ \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a}{SignalType::IMPULSE}};\ \ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceParams_a50298ced78a3bd8ccdd5f42fe930445f}{SURVIVORS}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 450;\ \ \ \ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{N}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 30;\ \ \ \ \ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceParams_a04785090759b34ac9462949e04fa0fdd}{POPULATION\_SIZE}}\ \ \ \ \ \ \ =\ 1000;\ \ \ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceParams_abb54b174f99877786b1b5152c8c59432}{MAX\_DELAY}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 50;\ \ \ \ \ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceParams_a4db65a5ed08e25bd8c2400ef3a44596f}{NUM\_THREADS}}\ \ \ \ \ \ \ \ \ \ \ =\ 8;\ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceParams_a5bf9b308e8a45f6b1f0f51f59b499a3c}{MAX\_DEPENDENCIES}}\ \ \ \ \ \ =\ \mbox{\hyperlink{namespaceParams_adde41d146857cf933d73f0ade06036fb}{N}};\ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceParams_ac9775a0487472d2dcd51bb6441c57057}{MAX\_GENES\_CHANGED}}\ \ \ \ \ =\ 5;\ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceParams_a43fc697a445946dc070a510b5d819541}{MAX\_GENERATIONS}}\ \ \ \ \ \ \ =\ 10000;\ \ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceParams_aa10a2b7a63bae9cd80ba6eaa6d0772b7}{CROSSOVER\_RATE}}\ \ \ \ \ \ \ \ =\ 0.4;\ \ \ \ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceParams_a22f342e5377d8214dbed166421ae0257}{MUTATION\_RATE}}\ \ \ \ \ \ \ \ \ =\ 0.4;\ \ \ \ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceParams_aaa4989ccec6610aae9e400b6729780e8}{PENALTY\_NUM\_GAINS}}\ \ \ \ \ =\ 1e-\/6;\ \ \ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceParams_a6fe941bce457463a8c8a903ff6facf16}{PENALTY\_NUM\_ADDITIONS}}\ =\ 1e-\/6;\ \ \ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceParams_aa3bae3068a397bd3e87c4bce4fcab198}{PENALTY\_MEMORY}}\ \ \ \ \ \ \ \ =\ 1e-\/6;\ \ \ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceParams_a2834d8ce3e722e8efd4e8ca20696c364}{PENALTY\_MSE}}\ \ \ \ \ \ \ \ \ \ \ =\ 1e2;\ \ \ \ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceParams_ac9d1f5c1aa22082a4e6131546949ec15}{EXIT\_THRESHOLD}}\ \ \ \ \ \ \ \ =\ 0.999;\ \ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceParams_ae17249460a1f340f94077f9bd41cf398}{PRINT\_MATRIX}}\ =\ \textcolor{keyword}{true};\ \ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceParams_a9406f498f2fb9a0804136b67dc4131cf}{SAVE\_RESULTS}}\ =\ \textcolor{keyword}{true};\ \ }
+\DoxyCodeLine{00050\ \}\ \ \textcolor{comment}{//\ namespace\ Params}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceHelpers}{Helpers}}\ \{}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{/*******************************************************}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *\ COMANDOS\ DE\ UTILIDAD\ PARA\ EL\ ASPECTO\ DE\ LA\ TERMINAL\ *}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *******************************************************/}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ CLEAR\_SCREEN\ \ \ \ \ \ "{}\(\backslash\)033[1;1H"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ CLEAR\_SCREEN\_FR\ \ \ "{}\(\backslash\)033[H\(\backslash\)033[J"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ MOVE\_TO\_COLUMN(x)\ "{}\(\backslash\)033["{}\ \#x\ "{}G"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ ERASE\_LINE\ \ \ \ \ \ \ \ "{}\(\backslash\)033[A\(\backslash\)033[K"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ WIDTH\ \ \ \ \ \ \ \ \ \ \ \ \ 6}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceHelpers_a379533948ff739329c4d4731aeaf73dd}{createSignal}}(std::vector<double>\&\ result,\ \mbox{\hyperlink{namespaceParams_a99ab6e71398f33c7f621874ced1bedce}{Params::SignalType}}\ signal\_type,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ L);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceHelpers_aac1b4790b58de2b884dc8cc3024ca435}{filterUsingDifferenceEquation}}(std::vector<double>\&\ \ \ \ \ \ in,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\&\ \ \ \ \ \ out,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\ b,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\ a,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ L);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceHelpers_abc79d0984e865f907b1a049842c7681a}{randomDouble}}(\textcolor{keywordtype}{double}\ min\ =\ 0,\ \textcolor{keywordtype}{double}\ max\ =\ 1);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceHelpers_a675baac9be98003c5a89bfff7adb12c4}{randomDoubleNormal}}(\textcolor{keywordtype}{double}\ mean\ =\ 0,\ \textcolor{keywordtype}{double}\ stddev\ =\ 0.01);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00128\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceHelpers_ac18da6249ccf9685030c0532a332c3ff}{randomInt}}(\textcolor{keywordtype}{int}\ min\ =\ 0,\ \textcolor{keywordtype}{int}\ max\ =\ INT\_MAX);}
+\DoxyCodeLine{00135\ \textcolor{keyword}{static}\ std::random\_device\ \mbox{\hyperlink{namespaceHelpers_a177af695531d398b06458eb9a4243800}{rd}};\ \ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{static}\ std::mt19937\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHelpers_a4130f0e39e22d3ba14599307bde66467}{gen}}(}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{namespaceHelpers_a177af695531d398b06458eb9a4243800}{rd}}());\ \ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00141\ \}\ \ \textcolor{comment}{//\ namespace\ Helpers}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
