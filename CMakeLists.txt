@@ -19,13 +19,6 @@ set(CMAKE_CXX_FLAGS
 set(ENV{LSAN_OPTIONS} "verbosity=1:log_threads=1")
 
 # DEPENDENCIES ################################################################
-# Catch2
-find_package(Catch2 3 REQUIRED)
-if(NOT Catch2_FOUND)
-  message(
-    FATAL_ERROR "Catch2 not found. Please install it or set CMAKE_PREFIX_PATH.")
-endif()
-
 # OpenMP
 find_package(OpenMP REQUIRED)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
