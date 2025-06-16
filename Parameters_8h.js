@@ -1,0 +1,38 @@
+var Parameters_8h =
+[
+    [ "_USE_MATH_DEFINES", "Parameters_8h.html#a525335710b53cb064ca56b936120431e", null ],
+    [ "CLEAR_SCREEN", "Parameters_8h.html#a788be1e5263200d55dddebd3606ccad4", null ],
+    [ "CLEAR_SCREEN_FR", "Parameters_8h.html#a0bc26f84308643c9925657e9bd4f21a9", null ],
+    [ "ERASE_LINE", "Parameters_8h.html#ab0ed582bd1d1f9ecdc30a2bf711df24a", null ],
+    [ "MOVE_TO_COLUMN", "Parameters_8h.html#a22b9d6a5652b0db56f72c4326e2d1f41", null ],
+    [ "WIDTH", "Parameters_8h.html#a241aeeb764887ae5e3de58b98f04b16d", null ],
+    [ "SignalType", "Parameters_8h.html#a99ab6e71398f33c7f621874ced1bedce", [
+      [ "IMPULSE", "Parameters_8h.html#a99ab6e71398f33c7f621874ced1bedcea3ef185a5d1e66c604f07464da226288a", null ],
+      [ "WHITE_NOISE", "Parameters_8h.html#a99ab6e71398f33c7f621874ced1bedcea5e2eb471621ac5e0288a9a432491dabd", null ]
+    ] ],
+    [ "createSignal", "Parameters_8h.html#a379533948ff739329c4d4731aeaf73dd", null ],
+    [ "filterUsingDifferenceEquation", "Parameters_8h.html#aac1b4790b58de2b884dc8cc3024ca435", null ],
+    [ "gen", "Parameters_8h.html#a4130f0e39e22d3ba14599307bde66467", null ],
+    [ "randomDouble", "Parameters_8h.html#abc79d0984e865f907b1a049842c7681a", null ],
+    [ "randomDoubleNormal", "Parameters_8h.html#a675baac9be98003c5a89bfff7adb12c4", null ],
+    [ "randomInt", "Parameters_8h.html#ac18da6249ccf9685030c0532a332c3ff", null ],
+    [ "CROSSOVER_RATE", "Parameters_8h.html#aa10a2b7a63bae9cd80ba6eaa6d0772b7", null ],
+    [ "EXIT_THRESHOLD", "Parameters_8h.html#ac9d1f5c1aa22082a4e6131546949ec15", null ],
+    [ "inputSignal_TYPE", "Parameters_8h.html#aa7acf99c30afbc9f896149f028ad083e", null ],
+    [ "MAX_DELAY", "Parameters_8h.html#abb54b174f99877786b1b5152c8c59432", null ],
+    [ "MAX_DEPENDENCIES", "Parameters_8h.html#a5bf9b308e8a45f6b1f0f51f59b499a3c", null ],
+    [ "MAX_GENERATIONS", "Parameters_8h.html#a43fc697a445946dc070a510b5d819541", null ],
+    [ "MAX_GENES_CHANGED", "Parameters_8h.html#ac9775a0487472d2dcd51bb6441c57057", null ],
+    [ "MUTATION_RATE", "Parameters_8h.html#a22f342e5377d8214dbed166421ae0257", null ],
+    [ "N", "Parameters_8h.html#adde41d146857cf933d73f0ade06036fb", null ],
+    [ "NUM_THREADS", "Parameters_8h.html#a4db65a5ed08e25bd8c2400ef3a44596f", null ],
+    [ "PENALTY_MEMORY", "Parameters_8h.html#aa3bae3068a397bd3e87c4bce4fcab198", null ],
+    [ "PENALTY_MSE", "Parameters_8h.html#a2834d8ce3e722e8efd4e8ca20696c364", null ],
+    [ "PENALTY_NUM_ADDITIONS", "Parameters_8h.html#a6fe941bce457463a8c8a903ff6facf16", null ],
+    [ "PENALTY_NUM_GAINS", "Parameters_8h.html#aaa4989ccec6610aae9e400b6729780e8", null ],
+    [ "POPULATION_SIZE", "Parameters_8h.html#a04785090759b34ac9462949e04fa0fdd", null ],
+    [ "PRINT_MATRIX", "Parameters_8h.html#ae17249460a1f340f94077f9bd41cf398", null ],
+    [ "rd", "Parameters_8h.html#a177af695531d398b06458eb9a4243800", null ],
+    [ "SAVE_RESULTS", "Parameters_8h.html#a9406f498f2fb9a0804136b67dc4131cf", null ],
+    [ "SURVIVORS", "Parameters_8h.html#a50298ced78a3bd8ccdd5f42fe930445f", null ]
+];
