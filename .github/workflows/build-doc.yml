@@ -41,3 +41,24 @@ jobs:
         with:
           name: doc-latex
           path: doc/latex/
+
+  deploy-pages:
+    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+    needs: build-doc
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Download HTML documentation artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: doc-html
+          path: doc-html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: doc-html
