@@ -6,7 +6,7 @@
 MyCanvas::MyCanvas() {
 }
 void MyCanvas::paint(Graphics& g) {
-  g.fillAll(Colours::blue);
+  g.fillAll(CustomColours::paletBlue);
 }
 
 void MyCanvas::mouseDoubleClick(const MouseEvent& event) { getParentComponent()->mouseDoubleClick(event); }

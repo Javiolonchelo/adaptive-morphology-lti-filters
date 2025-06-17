@@ -28,14 +28,6 @@ GainAudioProcessorEditor::GainAudioProcessorEditor(GainAudioProcessor& p)
   knob->setLookAndFeel(&customLookAndFeel);
   myCanvas->addAndMakeVisible(*knob);
 
-  // Bypass button settings
-  bypassButton = std::make_unique<TextButton>();
-  bypassButton->setBounds(0, TITLE_HEIGHT, 100, 100);
-  bypassButton->setButtonText("Bypass");
-  bypassButton->setClickingTogglesState(true);
-  bypassButton->setToggleable(true);
-  // addAndMakeVisible(*bypassButton);
-
   // Title
   titleComponent = std::make_unique<TitleBox>(*audioProcessor.apvts);
   titleComponent->setOpaque(true);
@@ -44,9 +36,7 @@ GainAudioProcessorEditor::GainAudioProcessorEditor(GainAudioProcessor& p)
   myCanvas->addAndMakeVisible(*titleComponent);
 
   // Attachments
-  knobAttachment = std::make_unique<AudioProcessorValueTreeState::SliderAttachment>(*p.apvts, P_GAIN_ID, *knob);
-  bypassAttachment =
-      std::make_unique<AudioProcessorValueTreeState::ButtonAttachment>(*p.apvts, P_BYPASS_ID, *bypassButton);
+  knobAttachment = std::make_unique<AudioProcessorValueTreeState::SliderAttachment>(*audioProcessor.apvts, P_GAIN_ID, *knob);
   knob->addListener(titleComponent.get());
   audioProcessor.apvts->addParameterListener(P_GAIN_ID, this);
   audioProcessor.apvts->addParameterListener(P_SIZE_ID, this);
@@ -57,6 +47,11 @@ GainAudioProcessorEditor::GainAudioProcessorEditor(GainAudioProcessor& p)
 GainAudioProcessorEditor::~GainAudioProcessorEditor() {
   LookAndFeel_V4::setDefaultLookAndFeel(nullptr);
   knob->setLookAndFeel(nullptr);
+  myCanvas->setLookAndFeel(nullptr);
+  audioProcessor.apvts->removeParameterListener(P_GAIN_ID, this);
+  audioProcessor.apvts->removeParameterListener(P_SIZE_ID, this);
+  audioProcessor.apvts->removeParameterListener(P_X_ID, this);
+  audioProcessor.apvts->removeParameterListener(P_Y_ID, this);
 }
 
 void GainAudioProcessorEditor::paint(juce::Graphics& g) {
@@ -144,5 +139,4 @@ void GainAudioProcessorEditor::mouseWheelMove(const MouseEvent&, const MouseWhee
   repaint();
 }
 void GainAudioProcessorEditor::parameterChanged(const String& parameterID, float newValue) {
-  repaint();
 }

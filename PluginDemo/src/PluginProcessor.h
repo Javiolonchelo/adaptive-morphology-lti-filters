@@ -10,12 +10,17 @@
 #include "FoundFilter.h"
 
 class GainAudioProcessor : public AudioProcessor
+                         , public AudioProcessorValueTreeState::Listener
 #if JucePlugin_Enable_ARA
     ,
                            public AudioProcessorARAExtension
 #endif
 {
-   public:
+public:
+    void reset() override;
+
+    void parameterChanged(const String &parameterID, float newValue) override;
+
     GainAudioProcessor();
     ~GainAudioProcessor() override;
 
@@ -48,12 +53,12 @@ class GainAudioProcessor : public AudioProcessor
     void setStateInformation(const void *data, int sizeInBytes) override;
 
     std::unique_ptr<AudioProcessorValueTreeState> apvts;
-    SmoothedValue<float> gain;
+    std::unique_ptr<SmoothedValue<float>>         gain;
 
    private:
     static AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
 
-    filter_t foundFilter[2];
+    filter_t foundFilter[2]{};
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(GainAudioProcessor)
 };

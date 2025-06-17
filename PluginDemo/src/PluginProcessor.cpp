@@ -10,7 +10,6 @@ AudioProcessorValueTreeState::ParameterLayout GainAudioProcessor::createParamete
   std::vector<std::unique_ptr<RangedAudioParameter>> params;
   params.push_back(std::make_unique<AudioParameterFloat>(
       P_GAIN_ID, P_GAIN_NAME, NormalisableRange<float>(-30.0f, 30.0f, 0.01f), 0.0f));
-  params.push_back(std::make_unique<AudioParameterBool>(P_BYPASS_ID, P_BYPASS_NAME, true));
   params.push_back(
       std::make_unique<AudioParameterFloat>(P_X_ID, P_X_NAME, NormalisableRange<float>(-1.0f, 2.0f, 0.001f), 0.5f));
   params.push_back(
@@ -18,6 +17,19 @@ AudioProcessorValueTreeState::ParameterLayout GainAudioProcessor::createParamete
   params.push_back(
       std::make_unique<AudioParameterFloat>(P_SIZE_ID, P_SIZE_NAME, NormalisableRange<float>(0.0f, 4.0f, 0.01f), 0.6f));
   return {params.begin(), params.end()};
+}
+
+void GainAudioProcessor::reset() {
+  gain->setCurrentAndTargetValue(1.0f);
+  AudioProcessor::reset();
+}
+
+void GainAudioProcessor::parameterChanged(const String &parameterID, float newValue) {
+  DBG("Parameter changed: " << parameterID << " to " << newValue);
+  if (parameterID == P_GAIN_ID) {
+    const auto gainParam = apvts->getParameter(P_GAIN_ID);
+    gain->setTargetValue(gainParam->convertFrom0to1(newValue));
+  }
 }
 
 GainAudioProcessor::GainAudioProcessor()
@@ -36,6 +48,7 @@ GainAudioProcessor::GainAudioProcessor()
   for (int channel = 0; channel < 2; channel++) {
     filter_init(&foundFilter[channel]);
   }
+  gain = std::make_unique<SmoothedValue<float>>();
 }
 
 GainAudioProcessor::~GainAudioProcessor() {}
@@ -82,7 +95,8 @@ void GainAudioProcessor::prepareToPlay(double sampleRate, int samplesPerBlock) {
   for (int channel = 0; channel < 2; channel++) {
     filter_reset(&foundFilter[channel]);
   }
-  gain.reset(sampleRate, 0.005);
+  gain->reset(sampleRate, 0.005);
+  gain->setCurrentAndTargetValue(1.0f);
 }
 
 void GainAudioProcessor::releaseResources() {}
@@ -111,18 +125,18 @@ void GainAudioProcessor::processBlock(AudioBuffer<float>& buffer, MidiBuffer& mi
   const auto        numOuts = getTotalNumOutputChannels();
   const auto        N       = buffer.getNumSamples();
 
-  gain.setTargetValue(apvts->getRawParameterValue(P_GAIN_ID)->load());
-  auto currentGain = gain.getCurrentValue();
+  const auto dBs = apvts->getRawParameterValue(P_GAIN_ID)->load();
+  gain->setTargetValue(Decibels::decibelsToGain(dBs));
 
-  for (auto i = numIns; i < numOuts; ++i)
+  for (auto i = numIns; i < numOuts; i++)
     buffer.clear(i, 0, buffer.getNumSamples());
 
-  for (int channel = 0; channel < numIns; channel++) {
-    auto* y = buffer.getWritePointer(channel);
-    for (int n = 0; n < N; n++) {
+  for (int n = 0; n < N; n++) {
+    const auto currentGain = gain->getNextValue();
+    for (int channel = 0; channel < numIns; channel++) {
+      auto* y = buffer.getWritePointer(channel);
       filter_process(&foundFilter[channel], &y[n], &y[n], 1);
-      if (channel == 0) { currentGain = gain.getCurrentValue(); }
-      y[n] *= Decibels::decibelsToGain(currentGain);
+      y[n] *= currentGain;
     }
   }
 }

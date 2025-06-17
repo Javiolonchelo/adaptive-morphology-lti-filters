@@ -33,14 +33,12 @@ class GainAudioProcessorEditor : public AudioProcessorEditor, private AudioProce
   std::unique_ptr<MyCanvas>   myCanvas;
   std::unique_ptr<Knob>   knob;
   std::unique_ptr<TitleBox>   titleComponent;
-  std::unique_ptr<TextButton> bypassButton;
 
   Point<int>   lastCenter             = {STARTUP_CENTER, STARTUP_CENTER};
   Point<float> posWhenStartedDragging = {0.0f, 0.0f};
 
   // APVTS
   std::unique_ptr<AudioProcessorValueTreeState::SliderAttachment> knobAttachment;
-  std::unique_ptr<AudioProcessorValueTreeState::ButtonAttachment> bypassAttachment;
 
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(GainAudioProcessorEditor)
  public:

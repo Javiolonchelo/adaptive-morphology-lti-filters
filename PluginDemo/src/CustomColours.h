@@ -18,7 +18,7 @@ const juce::Colour purple{0xFF801dae};             // 0x801dae
 const juce::Colour paletPurple{0xFF801DAE};        // 0x801DAE
 const juce::Colour paletViolet{0xFFCB63ED};        // 0xCB63ED
 const juce::Colour paletHotiolet{0xFFE1341E};      // 0xE1341E
-const juce::Colour paletBlue{0xFF3CD0DA};          // 0x3CD0DA
+const juce::Colour paletBlue{0xFF00ACE9};          // 0x00ACE9
 const juce::Colour paletWhite{0xFFF0F3DE};         // 0xF0F3DE
 const juce::Colour paletGold{0xFFECBE4F};          // 0xECBE4F
 const juce::Colour paletGoldInverted{0xFF4F7DEC};  // 0x4F7DEC
