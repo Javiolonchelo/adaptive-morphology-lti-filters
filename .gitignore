@@ -18,3 +18,5 @@ PluginDemo/cmake*
 PluginDemo/.idea
 PluginDemo/docs/html
 PluginDemo/docs/latex
+
+scripts/graphs/
