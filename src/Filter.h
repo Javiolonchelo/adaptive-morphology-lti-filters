@@ -165,15 +165,14 @@ class Filter {
    * @return Json::Value
    *
    * @code{.json}
-   *   {
-   *      "N"             : int,              // Tamaño de la matriz cuadrada
-   * (N x N) "fitness"       : double,           // Valor de fitness calculado
-   *      "inputNode"     : int,              // Índice del nodo de entrada
-   *      "outputNode"    : int,              // Índice del nodo de salida
-   *      "type_layer"    : [ int, ... ] ,    // Matriz de tipos
-   * (type_layer[i*N + j]) "value_layer"   : [ double, ... ]   // Matriz de
-   * valores (value_layer[i*N + j])
-   *  }
+   * {
+   *     "N"             : int,              // Tamaño de la matriz cuadrada (N x N)
+   *     "fitness"       : double,           // Valor de fitness calculado
+   *     "inputNode"     : int,              // Índice del nodo de entrada
+   *     "output"        : [ double, ... ],  // Última señal de salida obtenida
+   *     "type_layer"    : [ int, ... ] ,    // Matriz de tipos (type_layer[i*N + j])
+   *     "value_layer"   : [ double, ... ]   // Matriz de valores (value_layer[i*N + j])
+   * }
    * @endcode
    */
   Json::Value getJson();
