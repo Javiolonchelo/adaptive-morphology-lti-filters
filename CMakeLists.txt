@@ -6,8 +6,7 @@ project(
   LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 
-# COMPILER FLAGS ##############################################################
-# Enable high optimization and aggressive vectorization for release builds
+# COMPILER FLAGS 
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
 
@@ -18,7 +17,7 @@ set(CMAKE_CXX_FLAGS
 # Set LSAN_OPTIONS for all targets (for debugging memory leaks)
 set(ENV{LSAN_OPTIONS} "verbosity=1:log_threads=1")
 
-# DEPENDENCIES ################################################################
+# DEPENDENCIES
 # OpenMP
 find_package(OpenMP REQUIRED)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
@@ -28,25 +27,24 @@ add_library(PFG_common STATIC "src/Filter.cpp" "src/Parameters.cpp"
                               "ext/jsoncpp/jsoncpp.cpp")
 target_include_directories(PFG_common PUBLIC "${CMAKE_SOURCE_DIR}/ext/jsoncpp/")
 
-# DOCUMENTATION WITH DOXYGEN ##################################################
+# DOCUMENTATION WITH DOXYGEN
 find_package(Doxygen REQUIRED dot)
 message(STATUS "Doxygen found: ${DOXYGEN_EXECUTABLE}")
 add_custom_target(
   doc
   COMMAND ${DOXYGEN_EXECUTABLE} "${CMAKE_SOURCE_DIR}/doc/Doxyfile"
-  # now copy the generated index.html to the workspace root
   COMMAND
     ${CMAKE_COMMAND} -E copy_if_different
     "${CMAKE_SOURCE_DIR}/doc/html/index.html" "${CMAKE_SOURCE_DIR}/index.html"
   WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
   COMMENT "Generating API documentation with Doxygen")
 
-# MAIN PROGRAM ################################################################
+# MAIN PROGRAM 
 add_executable(${PROJECT_NAME} "src/main.cpp" "src/Algorithm.cpp"
                                "src/Menu.cpp")
 target_link_libraries(${PROJECT_NAME} PRIVATE PFG_common OpenMP::OpenMP_CXX)
 
-# TESTS #######################################################################
+# TESTS
 add_executable(test "test/Tests.cpp")
 target_include_directories(test PRIVATE "${CMAKE_SOURCE_DIR}/src"
                                         "${CMAKE_SOURCE_DIR}/ext/jsoncpp/")
