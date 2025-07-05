@@ -1,6 +1,6 @@
-// dBob Studio 2025
+// UPM 2025
 // Javier Rodrigo López
-// javiolonchelo@gmail.com
+// javier.rlopez@alumnos.upm.es
 
 #ifndef COMMON_H
 #define COMMON_H
@@ -9,16 +9,16 @@
 using namespace juce;
 
 // Parameter IDs
-static const String P_GAIN_ID   = "gain";
-static const String P_X_ID      = "x";
-static const String P_Y_ID      = "y";
-static const String P_SIZE_ID   = "size";
+static const String P_GAIN_ID = "gain";
+static const String P_X_ID    = "x";
+static const String P_Y_ID    = "y";
+static const String P_SIZE_ID = "size";
 
 // Parameter names
-static const String P_GAIN_NAME   = "Gain";
-static const String P_X_NAME      = "Position X";
-static const String P_Y_NAME      = "Position Y";
-static const String P_SIZE_NAME   = "Size";
+static const String P_GAIN_NAME = "Gain";
+static const String P_X_NAME    = "Position X";
+static const String P_Y_NAME    = "Position Y";
+static const String P_SIZE_NAME = "Size";
 
 // UI
 static constexpr int   STARTUP_SIZE       = 500;    // px

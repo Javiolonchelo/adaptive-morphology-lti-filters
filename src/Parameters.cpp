@@ -23,21 +23,15 @@ void Helpers::filterUsingDifferenceEquation(std::vector<double>&      in,
   const unsigned int nb = b.size();
   const unsigned int na = a.size();
 
-  // Initialize output array with zeros
   out.resize(L, 0);
 
   for (unsigned int n = 0; n < L; n++) {
-    // Apply feedforward (b coefficients)
     for (unsigned int j = 0; j < nb && j <= n; j++) {
       out[n] += b[j] * in[n - j];
     }
-
-    // Apply feedback (a coefficients)
     for (unsigned int j = 1; j < na && j <= n; j++) {
       out[n] -= a[j] * out[n - j];
     }
-
-    // Normalize by a[0]
     out[n] /= a[0];
   }
 }

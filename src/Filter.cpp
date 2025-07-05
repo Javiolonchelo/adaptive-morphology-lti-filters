@@ -29,7 +29,6 @@ Filter::Filter(unsigned int L) {
 
   fitness       = 0;
   previousError = 0;
-  // output.resize(L);
   state.resize(L, std::vector<double>(Params::N, 0));
 }
 
@@ -44,11 +43,6 @@ Filter::Filter(const Json::Value& json) {
       value_layer[i][j] = json["value_layer"][pos].asDouble();
     }
   }
-
-  // output.resize(L);
-  // for (unsigned int i = 0; i < L; i++) {
-  //   output[i] = json["output"][i].asDouble();
-  // }
 
   edges.clear();
   gains.clear();

@@ -1,6 +1,6 @@
-// dBob Studio 2025
+// UPM 2025
 // Javier Rodrigo López
-// javiolonchelo@gmail.com
+// javier.rlopez@alumnos.upm.es
 
 #pragma once
 
@@ -8,18 +8,17 @@
 
 using namespace juce;
 
-class Knob : public Slider
-{
-   public:
-    // void paint(Graphics &) override;
-    Knob();
+class Knob : public Slider {
+ public:
+  // void paint(Graphics &) override;
+  Knob();
 
-    void mouseDoubleClick(const MouseEvent &) override;
-    void mouseDrag(const MouseEvent &) override;
-    void mouseDown(const MouseEvent &) override;
-    void mouseUp(const MouseEvent &) override;
-    void mouseWheelMove(const MouseEvent &, const MouseWheelDetails &) override;
+  void mouseDoubleClick(const MouseEvent&) override;
+  void mouseDrag(const MouseEvent&) override;
+  void mouseDown(const MouseEvent&) override;
+  void mouseUp(const MouseEvent&) override;
+  void mouseWheelMove(const MouseEvent&, const MouseWheelDetails&) override;
 
-   private:
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(Knob)
+ private:
+  JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(Knob)
 };

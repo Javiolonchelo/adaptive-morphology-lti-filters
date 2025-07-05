@@ -29,14 +29,7 @@ int main(int argc, char* argv[]) {
 
   mode = atoi(argv[1]);
   switch (mode) {
-    case 0:  // Dereverb
-      // if (argc != 2) {
-      //   incorrectUsage(argv);
-      //   return 1;
-      // }
-
-      // filterName = "";
-      // outputFile = std::string(OUTPUT_FOLDER) + "/dereverb";
+    case 0:  // TODO Dereverb
       break;
 
     case 1:  // Filter finder
@@ -48,14 +41,7 @@ int main(int argc, char* argv[]) {
       outputFile = argv[3];
       break;
 
-    case 2:  // Generic ideal output
-      // if (argc != 2) {
-      //   incorrectUsage(argv);
-      //   return 1;
-      // }
-      // filterName = "";
-      // outputFile = std::string(OUTPUT_FOLDER) + "/denoise";
-      // std::cout << "Using output folder: " << outputFile << std::endl;
+    case 2:  // TODO Generic ideal output
       break;
 
     default:

@@ -1,6 +1,6 @@
-// dBob Studio 2025
+// UPM 2025
 // Javier Rodrigo López
-// javiolonchelo@gmail.com
+// javier.rlopez@alumnos.upm.es
 
 #pragma once
 
@@ -10,19 +10,25 @@
 
 using namespace juce;
 
-class CustomLookAndFeel final : public LookAndFeel_V4
-{
-   public:
-    CustomLookAndFeel();
-    ~CustomLookAndFeel() override;
+class CustomLookAndFeel final : public LookAndFeel_V4 {
+ public:
+  CustomLookAndFeel();
+  ~CustomLookAndFeel() override;
 
-    // Sliders
-    void drawRotarySlider(Graphics &, int x, int y, int width, int height, float sliderPosProportional, float rotaryStartAngle, float rotaryEndAngle,
-                          Slider &) override;
+  // Sliders
+  void drawRotarySlider(Graphics&,
+                        int   x,
+                        int   y,
+                        int   width,
+                        int   height,
+                        float sliderPosProportional,
+                        float rotaryStartAngle,
+                        float rotaryEndAngle,
+                        Slider&) override;
 
-    // Fonts
-    Typeface::Ptr getTypefaceForFont(const Font &) override;
+  // Fonts
+  Typeface::Ptr getTypefaceForFont(const Font&) override;
 
-   private:
-    std::unique_ptr<Image> knob;
+ private:
+  std::unique_ptr<Image> knob;
 };

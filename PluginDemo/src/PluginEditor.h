@@ -1,11 +1,11 @@
-// dBob Studio 2025
+// UPM 2025
 // Javier Rodrigo López
-// javiolonchelo@gmail.com
+// javier.rlopez@alumnos.upm.es
 
 #pragma once
 
-#include "Knob.h"
 #include "CustomLookAndFeel.h"
+#include "Knob.h"
 #include "MyCanvas.h"
 #include "PluginProcessor.h"
 #include "TitleBox.h"
@@ -28,11 +28,11 @@ class GainAudioProcessorEditor : public AudioProcessorEditor, private AudioProce
   void mouseWheelMove(const MouseEvent&, const MouseWheelDetails&) override;
 
   // Member variables
-  GainAudioProcessor&         audioProcessor;
-  CustomLookAndFeel           customLookAndFeel;
-  std::unique_ptr<MyCanvas>   myCanvas;
-  std::unique_ptr<Knob>   knob;
-  std::unique_ptr<TitleBox>   titleComponent;
+  GainAudioProcessor&       audioProcessor;
+  CustomLookAndFeel         customLookAndFeel;
+  std::unique_ptr<MyCanvas> myCanvas;
+  std::unique_ptr<Knob>     knob;
+  std::unique_ptr<TitleBox> titleComponent;
 
   Point<int>   lastCenter             = {STARTUP_CENTER, STARTUP_CENTER};
   Point<float> posWhenStartedDragging = {0.0f, 0.0f};

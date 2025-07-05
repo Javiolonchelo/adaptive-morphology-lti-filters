@@ -1,6 +1,6 @@
-// dBob Studio 2025
+// UPM 2025
 // Javier Rodrigo López
-// javiolonchelo@gmail.com
+// javier.rlopez@alumnos.upm.es
 
 #include "PluginProcessor.h"
 
@@ -24,7 +24,7 @@ void GainAudioProcessor::reset() {
   AudioProcessor::reset();
 }
 
-void GainAudioProcessor::parameterChanged(const String &parameterID, float newValue) {
+void GainAudioProcessor::parameterChanged(const String& parameterID, float newValue) {
   DBG("Parameter changed: " << parameterID << " to " << newValue);
   if (parameterID == P_GAIN_ID) {
     const auto gainParam = apvts->getParameter(P_GAIN_ID);

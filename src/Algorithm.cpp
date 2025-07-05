@@ -30,7 +30,6 @@ int Algorithm(std::vector<double>& inputSignal,
 
 #pragma omp parallel for  // CRUCE
     for (auto& f : offspring) {
-      // Roulette wheel selection based on fitness
       double total_fitness = 0.0;
       for (unsigned int i = 0; i < Params::SURVIVORS; ++i) {
         total_fitness += population[i].getFitness();
@@ -57,7 +56,7 @@ int Algorithm(std::vector<double>& inputSignal,
             break;
           }
         }
-        // Ensure parent_1 and parent_2 are different
+        // Aseguramos que los padres son diferentes
         if (parent_1 == parent_2) { parent_2 = (parent_2 + 1) % Params::SURVIVORS; }
         f.crossover(population[parent_1], population[parent_2]);
       } else {
@@ -93,7 +92,7 @@ int Algorithm(std::vector<double>& inputSignal,
 
 #pragma omp parallel for
     for (auto& f : offspring) {
-      // MUTATION
+      // MUTACIÓN
       if (Params::MUTATION_RATE > Helpers::randomDouble()) {
         unsigned int numGenesChanged = Helpers::randomInt(1, Params::MAX_GENES_CHANGED);
         for (unsigned int j = 0; j < numGenesChanged; j++) {

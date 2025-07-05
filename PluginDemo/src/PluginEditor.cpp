@@ -1,6 +1,6 @@
-// dBob Studio 2025
+// UPM 2025
 // Javier Rodrigo López
-// javiolonchelo@gmail.com
+// javier.rlopez@alumnos.upm.es
 
 #include "PluginEditor.h"
 
@@ -36,7 +36,8 @@ GainAudioProcessorEditor::GainAudioProcessorEditor(GainAudioProcessor& p)
   myCanvas->addAndMakeVisible(*titleComponent);
 
   // Attachments
-  knobAttachment = std::make_unique<AudioProcessorValueTreeState::SliderAttachment>(*audioProcessor.apvts, P_GAIN_ID, *knob);
+  knobAttachment =
+      std::make_unique<AudioProcessorValueTreeState::SliderAttachment>(*audioProcessor.apvts, P_GAIN_ID, *knob);
   knob->addListener(titleComponent.get());
   audioProcessor.apvts->addParameterListener(P_GAIN_ID, this);
   audioProcessor.apvts->addParameterListener(P_SIZE_ID, this);
@@ -138,5 +139,4 @@ void GainAudioProcessorEditor::mouseWheelMove(const MouseEvent&, const MouseWhee
   DBG("sizeMultiplier: " << sizeMultiplier);
   repaint();
 }
-void GainAudioProcessorEditor::parameterChanged(const String& parameterID, float newValue) {
-}
+void GainAudioProcessorEditor::parameterChanged(const String& parameterID, float newValue) {}
