@@ -1,6 +1,7 @@
 #ifndef ALGORITHM_H
 #define ALGORITHM_H
 
+#include <omp.h>
 #include "Filter.h"
 #include "Menu.h"
 #include "Parameters.h"

@@ -17,8 +17,8 @@ int Algorithm(std::vector<double>& inputSignal,
     g++;
 
 #pragma omp parallel for
-    for (auto& f : population) {
-      f.computeFitness(inputSignal, target);
+    for (int i = 0; i < static_cast<int>(population.size()); i++) {
+      population[i].computeFitness(inputSignal, target);
     }
 
     // SELECCIÓN
@@ -29,7 +29,8 @@ int Algorithm(std::vector<double>& inputSignal,
     }
 
 #pragma omp parallel for  // CRUCE
-    for (auto& f : offspring) {
+    for (int idx = 0; idx < static_cast<int>(offspring.size()); idx++) {
+      auto& f = offspring[idx];
       double total_fitness = 0.0;
       for (unsigned int i = 0; i < Params::SURVIVORS; ++i) {
         total_fitness += population[i].getFitness();
@@ -91,7 +92,8 @@ int Algorithm(std::vector<double>& inputSignal,
     }
 
 #pragma omp parallel for
-    for (auto& f : offspring) {
+    for (int idx = 0; idx < static_cast<int>(offspring.size()); idx++) {
+      auto& f = offspring[idx];
       // MUTACIÓN
       if (Params::MUTATION_RATE > Helpers::randomDouble()) {
         unsigned int numGenesChanged = Helpers::randomInt(1, Params::MAX_GENES_CHANGED);
@@ -139,7 +141,7 @@ int Algorithm(std::vector<double>& inputSignal,
     }
 
 #pragma omp parallel for
-    for (unsigned int i = 0; i < Params::POPULATION_SIZE; i++) {
+    for (int i = 0; i < static_cast<int>(Params::POPULATION_SIZE); i++) {
       population[i] = offspring[i];
     }
 

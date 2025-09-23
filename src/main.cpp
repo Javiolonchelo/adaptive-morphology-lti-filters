@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
   std::string outputFile;
 
   srand(time(NULL));
-  omp_set_schedule(omp_sched_static, 0);
+  // omp_set_schedule(omp_sched_static, 0);  // Commented out for MSVC compatibility
   omp_set_num_threads(Params::NUM_THREADS);
 
   if (argc < 2) {

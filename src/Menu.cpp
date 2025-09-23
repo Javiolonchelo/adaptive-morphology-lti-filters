@@ -16,9 +16,9 @@ int Menu(std::vector<double>& inputSignal,
     }
 
     case 1: {
-      file.open("../data/filters_for_benchmarking.csv", std::ios::in);
+      file.open("../../data/filters_for_benchmarking.csv", std::ios::in);
       if (!file.good()) {
-        std::cerr << "Error al abrir la base de datos './data/filters_for_benchmarking.csv'." << std::endl;
+        std::cerr << "Error al abrir la base de datos '../../data/filters_for_benchmarking.csv'." << std::endl;
         return 1;
       }
       std::string                            line;

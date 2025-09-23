@@ -30,9 +30,9 @@ enum SignalType {
 };
 
 static const SignalType   inputSignal_TYPE      = SignalType::IMPULSE;  ///< Tipo de señal de entrada.
-static const unsigned int SURVIVORS             = 450;    ///< Número de individuos supervivientes de la población
-static const unsigned int N                     = 30;     ///< Tamaño de la matriz cuadrada \f$ (N \times N) \f$.
-static const unsigned int POPULATION_SIZE       = 1000;   ///< Tamaño de la población.
+static const unsigned int SURVIVORS             = 45;    ///< Número de individuos supervivientes de la población
+static const unsigned int N                     = 6;     ///< Tamaño de la matriz cuadrada \f$ (N \times N) \f$.
+static const unsigned int POPULATION_SIZE       = 100;   ///< Tamaño de la población.
 static const unsigned int MAX_DELAY             = 50;     ///< Valor máximo de retardo permitido.
 static const unsigned int NUM_THREADS           = 8;      ///< Número de hilos a usar en la ejecución.
 static const unsigned int MAX_DEPENDENCIES      = N;      ///< Máximo número de dependencias permitidas por nodo.
